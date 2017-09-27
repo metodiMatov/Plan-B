@@ -143,3 +143,11 @@ footer a img {
 #flights{
     padding: 10px;
 }
+#planmenu{
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    display: none;
+    box-sizing: border-box;
+}
