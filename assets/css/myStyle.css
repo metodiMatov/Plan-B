@@ -1,0 +1,145 @@
+#logo{
+    width: 70px;
+    margin-top: 0.2em;
+    margin-left: 3em;
+}
+.navbar-nav{
+    margin-right: 5em;
+}
+nav .collapse  ul li button{
+    color: white;
+    background-color:Transparent;
+    text-decoration: none;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    height: 80px;
+    text-align: center;
+}
+.navbar{
+    margin-bottom: 0;
+} 
+.main-container {
+    height: 800px;
+    background: url("../images/prague.jpg") no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+} 
+.carusel{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+#second-pic{
+    display: none;
+}
+#third-pic{
+    display: none;
+}
+.attention-line{
+    background-color: yellow;
+    height: 50px;
+}
+.cheap-flights >.row > .col-md-3 > button > article > img {
+    width: 300px; 
+    height:200px; 
+}
+.partners >.row > .col-md-3 > button > article > img{
+    width: 300px; 
+    height:200px; 
+}
+footer {
+    margin-top: 1em;
+    background-color: rgb(242, 242, 242);
+    width: 100%;
+    display: inline-block;
+}
+
+footer article h4 {
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+}
+
+footer article ul {
+    list-style: none;
+}
+
+footer article ul li {
+    padding: 5px;
+}
+
+footer article ul li a {
+    color: purple;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+footer a img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+.search-form{
+    display: inline-block;
+    height: 500px;
+    width: 100%;
+    background-color: #ECECEC;
+    margin: 2em 0 0 0;
+    padding: 0;
+    border-radius: 1em;
+    border-top-left-radius: 0;
+}
+.buttons{
+    width: 100px;
+    padding: 0;
+    margin: 2em 0 0 1em;
+    background-color: #ECECEC;
+    border-top-left-radius: 1em;
+}
+.buttons > .row >.col-md-12 > input {
+    display: inline-block;
+    width: 100%;
+    border-radius: 1em;
+    background-color: whitesmoke;
+}
+.buttons >.row>.col-md-12 > input:hover{
+    background-color: #B1A7A7;
+}
+.search{
+    padding: 0;
+}
+.article-buttons{
+    background-color: white;
+    border: 0;
+}
+.section-color{
+    background-color: whitesmoke;
+}
+.line{
+    height: 50px;
+    background-color: whitesmoke;
+}
+.search-row{
+    margin: 0;
+}
+.col-lg-offset-4{
+    margin-left: 0;
+}
+.form-horizontal .form-group  {
+    margin-left: 0; 
+    margin-right: 0;
+    padding-left: 1em;
+}
+#flights{
+    padding: 10px;
+}

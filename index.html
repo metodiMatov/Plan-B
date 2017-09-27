@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/myStyle.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-select/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
+    <script src="node_modules/bootstrap-select/dist/js/i18n/defaults-*.min.js"></script>
+    <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="node_modules/bootstrap-datepicker/dist/js/locales/defaults-*.min.js"></script>
+    <title>AIR</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                    <img id="logo" src="assets/images/it-logo.png" alt="">
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><button type="button">ПЛАНИРАЙТЕ</button></li>
+                        <li><button type="button">ИНФОРМАЦИЯ</button></li>
+                        <li><button type="button">РЕЗЕРВИРАЙТЕ</button></li>
+                        <li><button type="button" id="user">ПОТРЕБИТЕЛ</button></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container main-container">
+            <div class="row search-row">
+                <aside class="col-md-3 buttons container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="image" src="assets/images/plane.png">
+                        </div>
+                        <div class="col-md-12">
+                            <input type="image" src="assets/images/planner.png">
+                        </div>
+                    </div>
+                </aside>
+                <div class="col-md-4 search">
+                    <form action="" class="form-horizontal  search-form">
+                        <fieldset>
+                            <legend id="flights">FLIGHTS</legend>
+                            <div class="form-group col-lg-offset-2">
+                                <label for="origin" class="col-lg-2 control-label">Origin</label>
+                                <div class="col-lg-10">
+                                    <select name="origin" class="selectpicker">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-offset-2">
+                                <label for="destination" class="col-lg-2 control-label">Destination</label>
+                                <div class="col-lg-10">
+                                    <select name="destination" class="selectpicker">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        </select>
+                                </div>
+                                <div class="form-group col-lg-offset-4">
+                                    <div class="input-group date" data-provide="datepicker-inline">
+                                        <label for="departure" class="col-lg-2 control-label">Departure</label>
+                                        <input type="text" class="form-control">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group date" data-provide="datepicker-inline">
+                                        <label for="return" class="col-lg-2 control-label">Return</label>
+                                        <input type="text" class="form-control">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="passangers">Passangers</label>
+                                    <input type="number" class="form-control bfh-number">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-4">
+                                    <button type="submit" class="btn btn-primary">SEARCH</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="attention-line">
+        </div>
+        <section class="container-fluid cheap-flights section-color">
+            <h3>CHEAP FLIGHTS*</h3>
+            <div class="row">
+                <div class="col-md-3 ">
+                    <button class="article-buttons">
+                            <article>
+                                    <img src="assets/images/milano.jpg" alt="">
+                                    <p>Special offer.Cheap flight form London</p>
+                                    <p>MILANO</p>
+                                </article>
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="article-buttons">
+                                <article>
+                                        <img src="assets/images/prague.jpg" alt="">
+                                        <p>Special offer.Cheap flight form London</p>
+                                        <p>PAGUE</p>
+                                    </article>
+                        </button>
+                </div>
+                <div class="col-md-3 ">
+                    <button class="article-buttons">
+                                <article>
+                                        <img src="assets/images/poland.jpg" alt="">
+                                        <p>Special offer.Cheap flight form London</p>
+                                        <p>POLAND</p>
+                                    </article>
+                        </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="article-buttons">
+                                <article>
+                                        <img src="assets/images/barca.jpg" alt="">
+                                        <p>Special offer.Cheap flight form London</p>
+                                        <p>BARCELONA</p>
+                                    </article>
+                        </button>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid partners section-color">
+            <h3>PARTNERS*</h3>
+            <div class="row">
+                <div class="col-md-3 ">
+                    <button class="article-buttons">
+                                <article>
+                                        <img src="assets/images/booking.jpg" alt="">
+                                        <p>Booking</p>
+                                    </article>
+                        </button>
+                </div>
+                <div class="col-md-3 ">
+                    <button class="article-buttons">
+                                    <article>
+                                            <img src="assets/images/carrent.jpg" alt="">
+                                            <p>CAR RENT</p>
+                                        </article>
+                            </button>
+                </div>
+                <div class="col-md-3 ">
+                    <button class="article-buttons">
+                                    <article>
+                                            <img src="assets/images/transfer.jpg" alt="">
+                                            <p>TRANSFER</p>
+                                        </article>
+                            </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="article-buttons">
+                                    <article>
+                                            <img src="assets/images/praking.jpg" alt="">
+                                            <p>PARKING</p>
+                                        </article>
+                            </button>
+                </div>
+            </div>
+        </section>
+        <div class="line">
+        </div>
+    </main>
+    <footer>
+        <div class="container container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <article>
+                        <h4>SERVICES</h4>
+                        <ul>
+                            <li><a href="">WIZZ Discount Club</a></li>
+                            <li><a href="">WIZZ Flex</a></li>
+                            <li><a href="">WIZZ Priority Boarding</a></li>
+                            <li><a href="">Seat allocation</a></li>
+                            <li><a href="">Hotels</a></li>
+                            <li><a href="">Car rentals</a></li>
+                            <li><a href="">Airport transfer</a></li>
+                            <li><a href="">All services and fees</a></li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="col-md-3">
+                    <article>
+                        <h4>CUSTOMER SERVICE</h4>
+                        <ul>
+                            <li><a href="">Booking with Wizz Air</a></li>
+                            <li><a href="">Baggage</a></li>
+                            <li><a href="">Payments</a></li>
+                            <li><a href="">Special Assistance</a></li>
+                            <li><a href="">Online check-in</a></li>
+                            <li><a href="">General Conditions of Carriage</a></li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="col-md-3">
+                    <article>
+                        <h4>FLIGHTS &amp; DESTINATIONS</h4>
+                        <ul>
+                            <li><a href="">Current Flight Status</a></li>
+                            <li><a href="">Destinations</a></li>
+                            <li><a href="">Timetable</a></li>
+                            <li><a href="">Cancellation information</a></li>
+                        </ul>
+                        <h4>FOLLOW US</h4>
+                        <a href=""><img src="assets/images/yt-logo.png" alt=""></a>
+                        <a href=""><img src="assets/images/fb-logo.png" alt=""></a>
+                        <a href=""><img src="assets/images/Twitter-logo.png" alt=""></a>
+                        <a href=""><img src="assets/images/insta-logo.png" alt=""></a>
+                    </article>
+                </div>
+                <div class="col-md-3">
+                    <article>
+                        <h4>ABOUT WIZZ AIR</h4>
+                        <ul>
+                            <li><a href="">Company information</a></li>
+                            <li><a href="">News</a></li>
+                            <li><a href="">WIZZ Magazine</a></li>
+                            <li><a href="">Career</a></li>
+                            <li><a href="">Press Office</a></li>
+                            <li><a href="">For travel agents &amp; partners</a></li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="planMenu" style="display: inline-block;">
+        <section>
+            <h1>ЗАПОЗНАЙТЕ СЕ С ВЪЗМОЖНОСТИТЕ СИ ЗА ПЪТУВАНЕ</h1>
+            <button type="button">
+                        <article>
+                            <h4>ИЗБЕРЕТЕ ПОЛЕТ</h4>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        </article>
+                    </button>
+            <button type="button">
+                        <article>
+                            <h4>ИЗБЕРЕТЕ ПОЛЕТ</h4>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        </article>
+                    </button>
+            <button type="button">
+                        <article>
+                            <h4>ИЗБЕРЕТЕ ПОЛЕТ</h4>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        </article>
+                    </button>
+        </section>
+    </div>
+</body>
+
+</html>
