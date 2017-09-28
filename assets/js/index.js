@@ -80,11 +80,11 @@ document.addEventListener("DOMContentLoaded", function () {
         registrationForm.style.display = "none";
     }, false);
 
-    document.querySelector("form#registration div i.closeTab").addEventListener("click", function (event) {
+    document.querySelector("form #registration div i.closeTab").addEventListener("click", function (event) {
         registrationForm.style.display = "none";
     }, false);
 
-    document.querySelector("form#signIn div i.closeTab").addEventListener("click", function (event) {
+    document.querySelector("form #signIn div i.closeTab").addEventListener("click", function (event) {
         showMenu(user, "signIn", false);
     }, false);
 });
