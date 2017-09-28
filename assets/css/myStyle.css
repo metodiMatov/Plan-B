@@ -173,3 +173,7 @@ footer a img {
     display: block;
     margin-top: 1em;
 }
+.black-screen{
+    display: none;
+    background-color: black;
+}

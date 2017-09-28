@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     var planButton = document.querySelector("nav .collapse  ul li > #plan");
-
     function showMenu(button, containerID, isOn) {
         if (isOn) {
+            
             document.getElementById(containerID).style.display = "inline-block";
             // button.style.color = "tansperant";
             // button.style.backgroundColor = "white";
@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // button.style.backgroundColor = "tansperant";
         }
     }
-
     planButton.addEventListener("click", function (event) {
         if (document.getElementById("planmenu").style.display == "inline-block") {
             showMenu(planButton, "planmenu", false);
@@ -27,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             showMenu(user, "signIn", false);
         } else {
             showMenu(user, "signIn", true);
+
         }
     }, false);
 
@@ -80,11 +80,11 @@ document.addEventListener("DOMContentLoaded", function () {
         registrationForm.style.display = "none";
     }, false);
 
-    document.querySelector("form #registration div i.closeTab").addEventListener("click", function (event) {
+    document.querySelector("#registration .formName i.closeTab").addEventListener("click", function (event) {
         registrationForm.style.display = "none";
     }, false);
 
-    document.querySelector("form #signIn div i.closeTab").addEventListener("click", function (event) {
+    document.querySelector("#signIn .formName i.closeTab").addEventListener("click", function (event) {
         showMenu(user, "signIn", false);
     }, false);
 });
