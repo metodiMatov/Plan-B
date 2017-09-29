@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var planButton = document.querySelector("nav .collapse  ul li > #plan");
     function showMenu(button, containerID, isOn) {
         if (isOn) {
-            
+
             document.getElementById(containerID).style.display = "inline-block";
             // button.style.color = "tansperant";
             // button.style.backgroundColor = "white";
@@ -12,21 +12,28 @@ document.addEventListener("DOMContentLoaded", function () {
             // button.style.backgroundColor = "tansperant";
         }
     }
-    planButton.addEventListener("click", function (event) {
+    planButton.addEventListener("click", function (event) {       
+        $('main').block({ message: null });  
         if (document.getElementById("planmenu").style.display == "inline-block") {
             showMenu(planButton, "planmenu", false);
         } else {
             showMenu(planButton, "planmenu", true);
         }
-    }, false)
-
+    }, false);
+    var main = document.querySelector('main');
+    main.addEventListener('click', function (event) {
+        if (document.getElementById("planmenu").style.display == "inline-block") {
+            $('main').unblock(); 
+            showMenu(planButton, "planmenu", false);
+            showMenu(user, "signIn", false);
+        }
+    });
     var user = document.querySelector("nav .collapse  ul li > #user");
     user.addEventListener("click", function (event) {
         if (document.getElementById("signIn").style.display == "inline-block") {
             showMenu(user, "signIn", false);
         } else {
             showMenu(user, "signIn", true);
-
         }
     }, false);
 

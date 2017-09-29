@@ -144,6 +144,7 @@ footer a img {
     padding: 10px;
 }
 #planmenu{
+    z-index: 1001;
     background-color: white;
     width: 100%;
     position: absolute;
