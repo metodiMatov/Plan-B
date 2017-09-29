@@ -109,4 +109,12 @@ document.addEventListener("DOMContentLoaded", function() {
         showMenu(user, "signIn", false);
         $('main').unblock();
     }, false);
+    
+    getOptions().then(function (destinations) {
+        var templateText = document.getElementById('destinations-template').innerHTML;
+        var templateFunc = Handlebars.compile(templateText);
+        var container = document.getElementById("destination-select");
+        container.innerHTML = templateFunc(destinations);
+        console.log(destinations);
+    });
 });

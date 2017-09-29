@@ -12,13 +12,16 @@
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="assets/js/blockUI.js"></script>
     <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/index.js"></script>
-    <script src="node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
-    <script src="node_modules/bootstrap-select/dist/js/i18n/defaults-*.min.js"></script>
-    <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="node_modules/bootstrap-datepicker/dist/js/locales/defaults-*.min.js"></script>
-    <script src="node_modules/handlebars/dist/handlebars.amd.min.js"></script>
+    <script src="assets/js/displayOptions.js"></script>
     <script src="assets/js/users.js"></script>
+    <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
+    <script src="node_modules/bootstrap-select/dist/js/i18n/defaults-en_US.min.js"></script>
+    <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.eu.min.js"></script>
+    <script src="assets/js/index.js"></script>
+
+
     <title>AIR</title>
 </head>
 
@@ -74,12 +77,12 @@
                             <div class="form-group col-lg-offset-2">
                                 <label for="destination" class="col-lg-2 control-label">Destination</label>
                                 <div class="col-lg-10">
-                                    <select name="destination" class="selectpicker">
-                                        <script id="destinationOptions" type="text/x-handlebars-template">
+                                    <select name="destination" id="destination-select" class="selectpicker">
+                                        <script id="destinations-template" type="text/x-handlebars-template"></script>  
                                             {{#each destinations}}
-                                            <option value="destination">{{name}}</option>
+                                              <option value="">{{name}}</option>
                                             {{/each}}
-                                        </script>
+                                          </script>
                                         </select>
                                 </div>
                                 <div class="form-group col-lg-offset-4">
@@ -308,7 +311,7 @@
         <input id="createUser" type="submit" value="Register">
         <input id="cancelRegistration" type="submit" value="Cancel">
     </form>
-    </script> 
+    </script>
 </body>
 
 </html>
