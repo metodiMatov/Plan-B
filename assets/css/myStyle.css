@@ -153,6 +153,7 @@ footer a img {
     box-sizing: border-box;
 }
 .popUp {
+    z-index: 1001;
     width: 35%;
     display: none;
     position: absolute;
