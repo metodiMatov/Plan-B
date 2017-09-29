@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="node_modules/bootstrap-select/dist/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/blockUI.js"></script>
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/index.js"></script>
     <script src="node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
     <script src="node_modules/bootstrap-select/dist/js/i18n/defaults-*.min.js"></script>
     <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="node_modules/bootstrap-datepicker/dist/js/locales/defaults-*.min.js"></script>
+    <script src="assets/js/users.js"></script>
     <title>AIR</title>
 </head>
 
@@ -34,9 +36,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><button type="button">ПЛАНИРАЙТЕ</button></li>
-                        <li><button type="button">ИНФОРМАЦИЯ</button></li>
-                        <li><button type="button">РЕЗЕРВИРАЙТЕ</button></li>
+                        <li><button type="button" id="plan">ПЛАНИРАЙТЕ</button></li>
+                        <li><button type="button" id="info">ИНФОРМАЦИЯ</button></li>
+                        <li><button type="button" id="book">РЕЗЕРВИРАЙТЕ</button></li>
                         <li><button type="button" id="user">ПОТРЕБИТЕЛ</button></li>
                     </ul>
                 </div>
@@ -162,7 +164,7 @@
                     <button class="article-buttons">
                                 <article>
                                         <img src="assets/images/booking.jpg" alt="">
-                                        <p>Booking</p>
+                                        <p>BOOKING</p>
                                     </article>
                         </button>
                 </div>
@@ -258,7 +260,7 @@
             </div>
         </div>
     </footer>
-    <div id="planMenu" style="display: inline-block;">
+    <div id="planmenu">
         <section>
             <h1>ЗАПОЗНАЙТЕ СЕ С ВЪЗМОЖНОСТИТЕ СИ ЗА ПЪТУВАНЕ</h1>
             <button type="button">
@@ -281,6 +283,31 @@
                     </button>
         </section>
     </div>
+    <form class="popUp" id="signIn" action="" method="GET">
+        <div class="formName">
+            <p>Sign In</p>
+            <i class="closeTab">×</i>
+        </div>
+        <label>E-mail<input id="mail" type="text" placeholder="E-mail"></label>
+        <label>Password<input id="pass" type="password" placeholder="Password"></label>
+        <input id="signInButton" type="submit" value="Sign in">
+        <input id="cancelButton" type="submit" value="Cancel">
+        <a id="registerButton" href="">Registration</a>
+    </form>
+    <form class="popUp" id="registration" action="" method="POST">
+        <div class="formName">
+            <p>Register</p>
+            <i class="closeTab">×</i>
+        </div>
+        <input type="text" placeholder="First name">
+        <input type="text" placeholder="Last name">
+        <input type="text" placeholder="Mobile phone">
+        <input type="text" placeholder="E-mail">
+        <input type="password" placeholder="Password">
+        <input id="createUser" type="submit" value="Register">
+        <input id="cancelRegistration" type="submit" value="Cancel">
+    </form>
+    </script> 
 </body>
 
 </html>

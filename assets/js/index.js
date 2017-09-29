@@ -1,27 +1,36 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var planButton = document.querySelector("nav ul li button");
+    var planButton = document.querySelector("nav .collapse  ul li > #plan");
 
     function showMenu(button, containerID, isOn) {
         if (isOn) {
+
             document.getElementById(containerID).style.display = "inline-block";
-            button.style.color = "navy";
-            button.style.backgroundColor = "white";
+            // button.style.color = "tansperant";
+            // button.style.backgroundColor = "white";
         } else {
             document.getElementById(containerID).style.display = "none";
-            button.style.color = "white";
-            button.style.backgroundColor = "navy";
+            // button.style.color = "white";
+            // button.style.backgroundColor = "tansperant";
         }
     }
-
     planButton.addEventListener("click", function(event) {
-        if (document.getElementById("planMenu").style.display == "inline-block") {
-            showMenu(planButton, "planMenu", false);
+        $('main').block({ message: null });
+        if (document.getElementById("planmenu").style.display == "inline-block") {
+            showMenu(planButton, "planmenu", false);
+            $('main').unblock();
         } else {
-            showMenu(planButton, "planMenu", true);
+            showMenu(planButton, "planmenu", true);
         }
-    }, false)
-
-    var user = document.querySelector("#user");
+    }, false);
+    var main = document.querySelector('main');
+    main.addEventListener('click', function(event) {
+        if (document.getElementById("planmenu").style.display == "inline-block") {
+            $('main').unblock();
+            showMenu(planButton, "planmenu", false);
+            showMenu(user, "signIn", false);
+        }
+    });
+    var user = document.querySelector("nav .collapse  ul li > #user");
     user.addEventListener("click", function(event) {
         if (document.getElementById("signIn").style.display == "inline-block") {
             showMenu(user, "signIn", false);
@@ -33,5 +42,58 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("cancelButton").addEventListener("click", function(event) {
         event.preventDefault();
         showMenu(user, "signIn", false);
+    }, false);
+    var mail = document.getElementById("mail");
+    var pass = document.getElementById("pass");
+    var signIn = document.getElementById("signInButton");
+    signIn.addEventListener("click", function(event) {
+        event.preventDefault();
+        var userConfirmation = users.findUser(mail.value, pass.value);
+        if (userConfirmation) {
+            var li = document.querySelector("nav li:last-child");
+            var userName = document.createElement("button");
+            userName.textContent = userConfirmation.firstName + " " + userConfirmation.lastName;
+            userName.setAttribute("class", "nav");
+            li.appendChild(userName);
+            user.parentNode.removeChild(user);
+            showMenu(user, "signIn", false);
+        }
+    }, false);
+
+    var register = document.getElementById("registerButton");
+    var registrationForm = document.getElementById("registration");
+    register.addEventListener("click", function(event) {
+        event.preventDefault();
+        registrationForm.style.display = "block";
+        showMenu(user, "signIn", false);
     }, false)
-})
+
+    document.getElementById("createUser").addEventListener("click", function(event) {
+        event.preventDefault();
+        var firstName = document.querySelector("form#registration input[placeholder='First name']").value;
+        var lastName = document.querySelector("form#registration input[placeholder='Last name']").value;
+        var phone = document.querySelector("form#registration input[placeholder='Mobile phone']").value;
+        var email = document.querySelector("form#registration input[placeholder='E-mail']").value;
+        var password = document.querySelector("form#registration input[placeholder='Password']").value;
+        if (firstName && lastName && phone && email && password) {
+            users.addUser(firstName, lastName, phone, email, password)
+            registrationForm.style.display = "none";
+            showMenu(user, "signIn", true);
+        } else {
+            alert("Invalid data!");
+        }
+    }, false);
+
+    document.getElementById("cancelRegistration").addEventListener("click", function(event) {
+        event.preventDefault();
+        registrationForm.style.display = "none";
+    }, false);
+
+    document.querySelector("#registration .formName i.closeTab").addEventListener("click", function(event) {
+        registrationForm.style.display = "none";
+    }, false);
+
+    document.querySelector("#signIn .formName i.closeTab").addEventListener("click", function(event) {
+        showMenu(user, "signIn", false);
+    }, false);
+});
