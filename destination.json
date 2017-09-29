@@ -1,0 +1,32 @@
+{
+    "destinations":[
+    {
+        "name": "Prague",
+        "price": "100"
+    },
+    {
+        "name": "Paris",
+        "price": "120"
+    },
+    {
+        "name": "Milano",
+        "price": "120"
+    },
+    {
+        "name": "New York",
+        "price": "120"
+    },
+    {
+        "name": "Mardid",
+        "price": "120"
+    },
+    {
+        "name": "London",
+        "price": "120"
+    },
+    {
+        "name": "Budapest",
+        "price": "120"
+    }
+]
+}

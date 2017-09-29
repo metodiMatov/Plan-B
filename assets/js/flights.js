@@ -1,7 +1,25 @@
-function Flight(destination, departure) {
+function Flight() {
     this.origin = "Sofia";
-    this.destination = destination;
-    this.departure = departure;
+    this._destination = null;
+    this.departureDate = '';
+    this.returnDate = '';
+    this._tickets = [];
+}
+Flight.prototype.setDestiantion = function (destination) {
+    if (destination instanceof Destination) {
+        this._destination = destination;
+    }
+}
+Flight.prototype.setDepartureDate = function (departureDate) {
+    this.departureDate = departureDate;
+}
+Flight.prototype.setReturnDate = function (returnDate) {
+    this.returnDate = returnDate;
+}
+Flight.prototype.setReturnDate = function (ticket) {
+    if (ticket instanceof Ticket) {
+        this._tickets.push(ticket);
+    }
 }
 
 function FlightPicker() {
