@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         $('main').block({ message: null });  
         if (document.getElementById("planmenu").style.display == "inline-block") {
             showMenu(planButton, "planmenu", false);
+            $('main').unblock(); 
         } else {
             showMenu(planButton, "planmenu", true);
         }
