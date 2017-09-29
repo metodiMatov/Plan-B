@@ -20,27 +20,36 @@ document.addEventListener("DOMContentLoaded", function() {
             $('main').unblock();
         } else {
             showMenu(planButton, "planmenu", true);
+            showMenu(user, "signIn", false);
+            showMenu(user, "registration", false);
         }
     }, false);
     var main = document.querySelector('main');
     main.addEventListener('click', function(event) {
-        if (document.getElementById("planmenu").style.display == "inline-block") {
+        if (document.getElementById("planmenu").style.display == "inline-block" ||
+            document.getElementById("signIn").style.display == "inline-block" ||
+            document.getElementById("registration").style.display == "block") {
             $('main').unblock();
             showMenu(planButton, "planmenu", false);
             showMenu(user, "signIn", false);
+            showMenu(user, "registration", false);
         }
     });
     var user = document.querySelector("nav .collapse  ul li > #user");
     user.addEventListener("click", function(event) {
+        $('main').block({ message: null });
         if (document.getElementById("signIn").style.display == "inline-block") {
             showMenu(user, "signIn", false);
+            $('main').unblock();
         } else {
             showMenu(user, "signIn", true);
+            showMenu(planButton, "planmenu", false);
         }
     }, false);
 
-    document.getElementById("cancelButton").addEventListener("click", function(event) {
+    document.querySelector("#cancelButton").addEventListener("click", function(event) {
         event.preventDefault();
+        $('main').unblock();
         showMenu(user, "signIn", false);
     }, false);
     var mail = document.getElementById("mail");
@@ -66,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         registrationForm.style.display = "block";
         showMenu(user, "signIn", false);
+        showMenu(planButton, "planmenu", false);
     }, false)
 
     document.getElementById("createUser").addEventListener("click", function(event) {
@@ -86,14 +96,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById("cancelRegistration").addEventListener("click", function(event) {
         event.preventDefault();
+        $('main').unblock();
         registrationForm.style.display = "none";
     }, false);
 
     document.querySelector("#registration .formName i.closeTab").addEventListener("click", function(event) {
         registrationForm.style.display = "none";
+        $('main').unblock();
     }, false);
 
     document.querySelector("#signIn .formName i.closeTab").addEventListener("click", function(event) {
         showMenu(user, "signIn", false);
+        $('main').unblock();
     }, false);
 });
