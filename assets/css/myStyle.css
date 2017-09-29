@@ -158,15 +158,17 @@ footer a img {
     position: absolute;
     top: 200px;
     left: 500px;
-    height: 400px;
+    /* height: 400px; */
     background-color: white;
     border-radius: 5px;
     box-sizing: border-box;
+    border-radius: 1em;
 }
 .formName {
     width: 100%;
     height: 50px;
     background-color: rgb(231, 224, 224);
+    box-sizing: border-box;
 }
 #signIn label {
     font-size: 15px;
@@ -174,7 +176,78 @@ footer a img {
     display: block;
     margin-top: 1em;
 }
-.black-screen{
-    display: none;
-    background-color: black;
+#signInButton{
+    color: #ffffff;
+    background-color: #BD04BD;
+    border-color: #BD04BD;
+}
+#cancelButton{
+    color: #ffffff;
+    background-color: #178acc;
+    border-color: #1684c2;
+}
+#signIn label {
+    font-size: 15px;
+    text-align: center;
+    display: block;
+    margin-top: 1em;
+}
+#signIn input {
+    display: block;
+    margin: auto;
+    height: 2em;
+    width: 50%;
+    border-radius: 5px;
+}
+form#signIn input[type=submit] {
+    width: 50%;
+    height: 2.5em;
+    margin: auto;
+    margin-top: 1.5em;
+}
+#signIn a {
+    color: purple;
+    display: block;
+    text-align: center;
+    padding-top: 1em;
+    text-decoration: underline;
+    margin-bottom: 1em;
+}
+.formName p {
+    color: #178acc;
+    padding: 10px;
+    text-align: center;
+    font-size: 2em;
+    display: inline-block;
+}
+.closeTab {
+    float: right;
+    font-size: 3em;
+    color: purple;
+    cursor: pointer;
+}
+form a {
+    text-decoration: none;
+} 
+/* #registration {
+    height: 600px;
+} */
+#registration input {
+    display: block;
+    margin: auto;
+    padding: 0.5em;
+    margin-top: 1em;
+    border-radius: 3px;
+    width: 50%;
+    margin-bottom: 1em;
+}
+#createUser {
+    background-color: purple;
+    color: white;
+    font-weight: bolder;
+}
+#cancelRegistration {
+    background-color: #178acc;
+    color: white;
+    font-weight: bolder;
 }

@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }, false);
 
-    document.getElementById("cancelButton").addEventListener("click", function (event) {
+    document.querySelector("#cancelButton").addEventListener("click", function (event) {
         event.preventDefault();
         showMenu(user, "signIn", false);
     }, false);
