@@ -127,13 +127,19 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log(selectDestination.value);
             for (var index = 0; index < 7; index++) {
                 document.getElementById("departure-date").innerHTML = null;
+                document.getElementById("return-date").innerHTML = '<option selected="selected" placeholder="Select date">One way</option>';
                 if (selectDestination.value == destinations[index].name) {
-                    console.log(destinations[index].name);
                     destinations[index].flights.forEach(function(fl) {
                         var option = document.createElement("option");
                         option.value = fl.date;
                         option.textContent = fl.date;
                         document.getElementById("departure-date").appendChild(option);
+                    })
+                    destinations[index].returnFlights.forEach(function(returnF) {
+                        var op = document.createElement("option");
+                        op.value = returnF.date;
+                        op.textContent = returnF.date;
+                        document.getElementById("return-date").appendChild(op);
                     })
                     break;
                 }
