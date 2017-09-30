@@ -115,13 +115,27 @@ document.addEventListener("DOMContentLoaded", function() {
         // var templateFunc = Handlebars.compile(templateText);
         // var container = document.getElementById("destination-select");
         // container.innerHTML = templateFunc(destinations);
-        console.log(destinations);
         destinations.forEach(function(dest) {
             var opt = document.createElement("option");
             opt.value = dest.name;
             opt.textContent = dest.name;
             document.getElementById("destination-select").appendChild(opt);
+        });
 
+        var selectDestination = document.getElementById("destination-select");
+        selectDestination.addEventListener("change", function(event) {
+            console.log(selectDestination.value);
+            for (var index = 0; index < 7; index++) {
+                if (selectDestination.value == destinations[index].name) {
+                    console.log(destinations[index].name);
+                    destinations[index].flights.forEach(function(fl) {
+                        var option = document.createElement("option");
+                        option.value = fl.date;
+                        option.textContent = fl.date;
+                        document.getElementById("departure-date").appendChild(option);
+                    })
+                }
+            }
         })
     });
 });
