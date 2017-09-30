@@ -109,17 +109,19 @@ document.addEventListener("DOMContentLoaded", function() {
         showMenu(user, "signIn", false);
         $('main').unblock();
     }, false);
-    
-    getOptions().then(function (destinations) {
+
+    getOptions().then(function(destinations) {
         // var templateText = document.getElementById('destinations-template').innerHTML;
         // var templateFunc = Handlebars.compile(templateText);
         // var container = document.getElementById("destination-select");
         // container.innerHTML = templateFunc(destinations);
-        // console.log(destinations);
-        destinations.forEach(function(dest){
-            var opt=document.createElement("option");
-            opt.textContent=dest.name;
+        console.log(destinations);
+        destinations.forEach(function(dest) {
+            var opt = document.createElement("option");
+            opt.value = dest.name;
+            opt.textContent = dest.name;
             document.getElementById("destination-select").appendChild(opt);
+
         })
     });
 });
