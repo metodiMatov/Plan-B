@@ -126,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
         selectDestination.addEventListener("change", function(event) {
             console.log(selectDestination.value);
             for (var index = 0; index < 7; index++) {
+                document.getElementById("departure-date").innerHTML = null;
                 if (selectDestination.value == destinations[index].name) {
                     console.log(destinations[index].name);
                     destinations[index].flights.forEach(function(fl) {
@@ -134,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         option.textContent = fl.date;
                         document.getElementById("departure-date").appendChild(option);
                     })
+                    break;
                 }
             }
         })
