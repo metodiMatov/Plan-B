@@ -166,6 +166,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var searchbutton = document.querySelector('#search-button');
     searchbutton.addEventListener('click', function (event) {
         event.preventDefault();
-
+        
     });
 });
