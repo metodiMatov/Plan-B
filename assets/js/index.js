@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var planButton = document.querySelector("nav .collapse  ul li > #plan");
 
     function showMenu(button, containerID, isOn) {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // button.style.backgroundColor = "tansperant";
         }
     }
-    planButton.addEventListener("click", function(event) {
+    planButton.addEventListener("click", function (event) {
         $('main').block({ message: null });
         if (document.getElementById("planmenu").style.display == "inline-block") {
             showMenu(planButton, "planmenu", false);
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, false);
     var main = document.querySelector('main');
-    main.addEventListener('click', function(event) {
+    main.addEventListener('click', function (event) {
         if (document.getElementById("planmenu").style.display == "inline-block" ||
             document.getElementById("signIn").style.display == "inline-block" ||
             document.getElementById("registration").style.display == "block") {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
     var user = document.querySelector("nav .collapse  ul li > #user");
-    user.addEventListener("click", function(event) {
+    user.addEventListener("click", function (event) {
         $('main').block({ message: null });
         if (document.getElementById("signIn").style.display == "inline-block") {
             showMenu(user, "signIn", false);
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, false);
 
-    document.querySelector("#cancelButton").addEventListener("click", function(event) {
+    document.querySelector("#cancelButton").addEventListener("click", function (event) {
         event.preventDefault();
         $('main').unblock();
         showMenu(user, "signIn", false);
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var mail = document.getElementById("mail");
     var pass = document.getElementById("pass");
     var signIn = document.getElementById("signInButton");
-    signIn.addEventListener("click", function(event) {
+    signIn.addEventListener("click", function (event) {
         event.preventDefault();
         var userConfirmation = users.findUser(mail.value, pass.value);
         if (userConfirmation) {
@@ -71,14 +71,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var register = document.getElementById("registerButton");
     var registrationForm = document.getElementById("registration");
-    register.addEventListener("click", function(event) {
+    register.addEventListener("click", function (event) {
         event.preventDefault();
         registrationForm.style.display = "block";
         showMenu(user, "signIn", false);
         showMenu(planButton, "planmenu", false);
     }, false)
 
-    document.getElementById("createUser").addEventListener("click", function(event) {
+    document.getElementById("createUser").addEventListener("click", function (event) {
         event.preventDefault();
         var firstName = document.querySelector("form#registration input[placeholder='First name']").value;
         var lastName = document.querySelector("form#registration input[placeholder='Last name']").value;
@@ -94,28 +94,28 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, false);
 
-    document.getElementById("cancelRegistration").addEventListener("click", function(event) {
+    document.getElementById("cancelRegistration").addEventListener("click", function (event) {
         event.preventDefault();
         $('main').unblock();
         registrationForm.style.display = "none";
     }, false);
 
-    document.querySelector("#registration .formName i.closeTab").addEventListener("click", function(event) {
+    document.querySelector("#registration .formName i.closeTab").addEventListener("click", function (event) {
         registrationForm.style.display = "none";
         $('main').unblock();
     }, false);
 
-    document.querySelector("#signIn .formName i.closeTab").addEventListener("click", function(event) {
+    document.querySelector("#signIn .formName i.closeTab").addEventListener("click", function (event) {
         showMenu(user, "signIn", false);
         $('main').unblock();
     }, false);
 
-    getOptions().then(function(destinations) {
+    getOptions().then(function (destinations) {
         // var templateText = document.getElementById('destinations-template').innerHTML;
         // var templateFunc = Handlebars.compile(templateText);
         // var container = document.getElementById("destination-select");
         // container.innerHTML = templateFunc(destinations);
-        destinations.forEach(function(dest) {
+        destinations.forEach(function (dest) {
             var opt = document.createElement("option");
             opt.value = dest.name;
             opt.textContent = dest.name;
@@ -123,27 +123,49 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         var selectDestination = document.getElementById("destination-select");
-        selectDestination.addEventListener("change", function(event) {
-            console.log(selectDestination.value);
+        selectDestination.addEventListener("change", function (event) {
             for (var index = 0; index < 7; index++) {
                 document.getElementById("departure-date").innerHTML = null;
                 document.getElementById("return-date").innerHTML = '<option selected="selected" placeholder="Select date">One way</option>';
                 if (selectDestination.value == destinations[index].name) {
-                    destinations[index].flights.forEach(function(fl) {
+                    var depatrureDates = destinations[index].flights.map(d => d = d.date);
+                    depatrureDates.forEach(function (date) {
                         var option = document.createElement("option");
-                        option.value = fl.date;
-                        option.textContent = fl.date;
+                        option.value = date;
+                        option.textContent = date;
                         document.getElementById("departure-date").appendChild(option);
-                    })
-                    destinations[index].returnFlights.forEach(function(returnF) {
-                        var op = document.createElement("option");
-                        op.value = returnF.date;
-                        op.textContent = returnF.date;
-                        document.getElementById("return-date").appendChild(op);
+                    });
+                    
+                    var returnDates = destinations[index].returnFlights.map(d => d = d.date);
+                    var selectedDepartureDate = document.querySelector('#departure-date option').value;
+                    console.log(selectedDepartureDate);
+                    returnDates.forEach(function (date) {
+                        var retMonthDay = date.split('/');
+                        var depMonthDay = selectedDepartureDate.split('/');
+                        if (retMonthDay[0] == depMonthDay[0]) {
+                            if (retMonthDay[1] > depMonthDay[1] ) {
+                                var op = document.createElement("option");
+                                op.value = date;
+                                op.textContent = date;
+                                document.getElementById("return-date").appendChild(op);
+                            }
+                        }else{
+                            if (retMonthDay[0] > depMonthDay[0]) {
+                                var op = document.createElement("option");
+                                op.value = date;
+                                op.textContent = date;
+                                document.getElementById("return-date").appendChild(op);
+                            }
+                        }
                     })
                     break;
                 }
             }
         })
+    });
+    var searchbutton = document.querySelector('#search-button');
+    searchbutton.addEventListener('click', function (event) {
+        event.preventDefault();
+
     });
 });
