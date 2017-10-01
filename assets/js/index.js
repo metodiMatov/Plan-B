@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var planButton = document.querySelector("nav .collapse  ul li > #plan");
+    //var planButton = document.querySelector("nav .collapse  ul li > #plan");
 
     function showMenu(button, containerID, isOn) {
         if (isOn) {
@@ -13,24 +13,24 @@ document.addEventListener("DOMContentLoaded", function() {
             // button.style.backgroundColor = "tansperant";
         }
     }
-    planButton.addEventListener("click", function(event) {
-        $('main').block({ message: null });
-        if (document.getElementById("planmenu").style.display == "inline-block") {
-            showMenu(planButton, "planmenu", false);
-            $('main').unblock();
-        } else {
-            showMenu(planButton, "planmenu", true);
-            showMenu(user, "signIn", false);
-            showMenu(user, "registration", false);
-        }
-    }, false);
+    // planButton.addEventListener("click", function(event) {
+    //     $('main').block({ message: null });
+    //     if (document.getElementById("planmenu").style.display == "inline-block") {
+    //         showMenu(planButton, "planmenu", false);
+    //         $('main').unblock();
+    //     } else {
+    //         showMenu(planButton, "planmenu", true);
+    //         showMenu(user, "signIn", false);
+    //         showMenu(user, "registration", false);
+    //     }
+    // }, false);
     var main = document.querySelector('main');
     main.addEventListener('click', function(event) {
-        if (document.getElementById("planmenu").style.display == "inline-block" ||
+        if ( /*document.getElementById("planmenu").style.display == "inline-block" ||*/
             document.getElementById("signIn").style.display == "inline-block" ||
             document.getElementById("registration").style.display == "block") {
             $('main').unblock();
-            showMenu(planButton, "planmenu", false);
+            //showMenu(planButton, "planmenu", false);
             showMenu(user, "signIn", false);
             showMenu(user, "registration", false);
         }
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             $('main').unblock();
         } else {
             showMenu(user, "signIn", true);
-            showMenu(planButton, "planmenu", false);
+            //showMenu(planButton, "planmenu", false);
         }
     }, false);
 
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         registrationForm.style.display = "block";
         showMenu(user, "signIn", false);
-        showMenu(planButton, "planmenu", false);
+        //showMenu(planButton, "planmenu", false);
     }, false)
 
     document.getElementById("createUser").addEventListener("click", function(event) {
