@@ -124,26 +124,48 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var selectDestination = document.getElementById("destination-select");
         selectDestination.addEventListener("change", function(event) {
-            console.log(selectDestination.value);
             for (var index = 0; index < 7; index++) {
                 document.getElementById("departure-date").innerHTML = null;
                 document.getElementById("return-date").innerHTML = '<option selected="selected" placeholder="Select date">One way</option>';
                 if (selectDestination.value == destinations[index].name) {
-                    destinations[index].flights.forEach(function(fl) {
+                    var depatrureDates = destinations[index].flights.map(d => d = d.date);
+                    depatrureDates.forEach(function(date) {
                         var option = document.createElement("option");
-                        option.value = fl.date;
-                        option.textContent = fl.date;
+                        option.value = date;
+                        option.textContent = date;
                         document.getElementById("departure-date").appendChild(option);
-                    })
-                    destinations[index].returnFlights.forEach(function(returnF) {
-                        var op = document.createElement("option");
-                        op.value = returnF.date;
-                        op.textContent = returnF.date;
-                        document.getElementById("return-date").appendChild(op);
+                    });
+
+                    var returnDates = destinations[index].returnFlights.map(d => d = d.date);
+                    var selectedDepartureDate = document.querySelector('#departure-date option').value;
+                    console.log(selectedDepartureDate);
+                    returnDates.forEach(function(date) {
+                        var retMonthDay = date.split('/');
+                        var depMonthDay = selectedDepartureDate.split('/');
+                        if (retMonthDay[0] == depMonthDay[0]) {
+                            if (retMonthDay[1] > depMonthDay[1]) {
+                                var op = document.createElement("option");
+                                op.value = date;
+                                op.textContent = date;
+                                document.getElementById("return-date").appendChild(op);
+                            }
+                        } else {
+                            if (retMonthDay[0] > depMonthDay[0]) {
+                                var op = document.createElement("option");
+                                op.value = date;
+                                op.textContent = date;
+                                document.getElementById("return-date").appendChild(op);
+                            }
+                        }
                     })
                     break;
                 }
             }
         })
+    });
+    var searchbutton = document.querySelector('#search-button');
+    searchbutton.addEventListener('click', function(event) {
+        event.preventDefault();
+
     });
 });
