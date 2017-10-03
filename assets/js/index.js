@@ -1,36 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
-    //var planButton = document.querySelector("nav .collapse  ul li > #plan");
 
     function showMenu(button, containerID, isOn) {
         if (isOn) {
-
             document.getElementById(containerID).style.display = "inline-block";
-            // button.style.color = "tansperant";
-            // button.style.backgroundColor = "white";
         } else {
             document.getElementById(containerID).style.display = "none";
-            // button.style.color = "white";
-            // button.style.backgroundColor = "tansperant";
         }
     }
-    // planButton.addEventListener("click", function(event) {
-    //     $('main').block({ message: null });
-    //     if (document.getElementById("planmenu").style.display == "inline-block") {
-    //         showMenu(planButton, "planmenu", false);
-    //         $('main').unblock();
-    //     } else {
-    //         showMenu(planButton, "planmenu", true);
-    //         showMenu(user, "signIn", false);
-    //         showMenu(user, "registration", false);
-    //     }
-    // }, false);
+
     var main = document.querySelector('main');
     main.addEventListener('click', function(event) {
-        if ( /*document.getElementById("planmenu").style.display == "inline-block" ||*/
-            document.getElementById("signIn").style.display == "inline-block" ||
+        if (document.getElementById("signIn").style.display == "inline-block" ||
             document.getElementById("registration").style.display == "block") {
             $('main').unblock();
-            //showMenu(planButton, "planmenu", false);
             showMenu(user, "signIn", false);
             showMenu(user, "registration", false);
         }
@@ -43,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
             $('main').unblock();
         } else {
             showMenu(user, "signIn", true);
-            //showMenu(planButton, "planmenu", false);
         }
     }, false);
 
@@ -73,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         registrationForm.style.display = "block";
         showMenu(user, "signIn", false);
-        //showMenu(planButton, "planmenu", false);
     }, false)
 
     document.getElementById("createUser").addEventListener("click", function(event) {
@@ -111,22 +91,15 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("profile").addEventListener("click", function(event) {
         event.preventDefault();
         if (document.getElementById("userProfile").style.display == "none") {
-            // $('main').block();
             $("#first").hide();
             document.getElementById("userProfile").style.display = "block";
         } else {
-            // if (document.getElementById("userProfile").style.display == "block") {
-            // $('main').unblock();
             $("#first").show();
             document.getElementById("userProfile").style.display = "none";
         }
     })
 
     getOptions().then(function(destinations) {
-        // var templateText = document.getElementById('destinations-template').innerHTML;
-        // var templateFunc = Handlebars.compile(templateText);
-        // var container = document.getElementById("destination-select");
-        // container.innerHTML = templateFunc(destinations);
         destinations.forEach(function(dest) {
             var opt = document.createElement("option");
             opt.value = dest.name;
@@ -185,18 +158,4 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
 
     });
-
-    // $("#profile").on("click", function(event) {
-    //     if (document.getElementById("userProfile").style.display = "block") {
-    //         showMenu("#profile", "#userProfile", false);
-    //         $("#userProfile").hide();
-    //         $('main').unblock();
-    //     } else {
-    //         $('main').block();
-    //         showMenu("#profile", "#userProfile", true);
-    //         $("#userProfile").css("display", "block");
-    //         // .style.display = "block";
-    //     }
-    // })
-
 });

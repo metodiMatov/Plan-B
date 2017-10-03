@@ -40,9 +40,6 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- <li><button type="button" id="plan">ПЛАНИРАЙТЕ</button></li>
-                        <li><button type="button" id="info">ИНФОРМАЦИЯ</button></li>
-                        <li><button type="button" id="book">РЕЗЕРВИРАЙТЕ</button></li> -->
                         <li><button type="button" id="user">ПОТРЕБИТЕЛ</button></li>
                         <li> <button type="button" id="profile"></button></li>
                     </ul>
@@ -50,7 +47,7 @@
             </div>
         </nav>
     </header>
-    <main id="first" style="display:none">
+    <main id="first">
         <div class="container main-container">
             <div class="row search-row">
                 <aside class="col-md-3 buttons container">
@@ -80,11 +77,6 @@
                                 <div class="col-lg-10">
                                     <select name="destination" id="destination-select" class="selectpicker">
                                             <option selected="selected" placeholder="Select destination" disabled="disabled">Select destination</option>
-                                        <!-- <script id="destinations-template" type="text/x-handlebars-template"></script>  
-                                            {{#each destinations}}
-                                              <option value="">{{name}}</option>
-                                            {{/each}}
-                                          </script> -->
                                         </select>
                                 </div>
                                 <div class="form-group col-lg-offset-2">
@@ -92,7 +84,7 @@
                                     <div class="col-lg-10 mf">
                                         <select name="deoartureDate" id="departure-date" class="departure-date">
                                                 <option required="required" placeholder="Select date" disabled="disabled"></option>
-                                                <!-- class="selectpicker departure-date" -->
+                                               
                                             </select>
                                     </div>
                                 </div>
@@ -100,7 +92,7 @@
                                     <label for="return" class="col-lg-2 control-label">Return Date</label>
                                     <div class="col-lg-10 mf">
                                         <select name="return" id="return-date" class="return-date" placeholder>
-                                                    <!-- class="selectpicker departure-date" -->
+                                                 
                                                 </select>
                                     </div>
                                 </div>
@@ -215,14 +207,6 @@
         </div>
     </main>
     <main id="second">
-
-    </main>
-    <main id="userProfile">
-        <ul>
-            <h5>Резервирани полети: </h5>
-        </ul>
-    </main>
-    <footer>
         <div class="container container-fluid">
             <div class="container-fluid">
                 <div class="row">
@@ -473,153 +457,127 @@
                     </div>
                 </div>
             </div>
-            <<<<<<< HEAD </footer>
-                <!-- <div id="planmenu">
-        <section>
-            <h1>ЗАПОЗНАЙТЕ СЕ С ВЪЗМОЖНОСТИТЕ СИ ЗА ПЪТУВАНЕ</h1>
-            <button type="button">
-=======
-        <footer>
-            <div class="container container-fluid">
-                <div class="row">
-                    <div class="col-md-3">
-                        <article>
-                            <h4>SERVICES</h4>
-                            <ul>
-                                <li><a href="">ITAir Discount Club</a></li>
-                                <li><a href="">ITAir Flex</a></li>
-                                <li><a href="">ITAir Priority Boarding</a></li>
-                                <li><a href="">Seat allocation</a></li>
-                                <li><a href="">Hotels</a></li>
-                                <li><a href="">Car rentals</a></li>
-                                <li><a href="">Airport transfer</a></li>
-                                <li><a href="">All services and fees</a></li>
-                            </ul>
-                        </article>
-                    </div>
-                    <div class="col-md-3">
-                        <article>
-                            <h4>CUSTOMER SERVICE</h4>
-                            <ul>
-                                <li><a href="">Booking with ITAir</a></li>
-                                <li><a href="">Baggage</a></li>
-                                <li><a href="">Payments</a></li>
-                                <li><a href="">Special Assistance</a></li>
-                                <li><a href="">Online check-in</a></li>
-                                <li><a href="">General Conditions of Carriage</a></li>
-                            </ul>
-                        </article>
-                    </div>
-                    <div class="col-md-3">
-                        <article>
-                            <h4>FLIGHTS &amp; DESTINATIONS</h4>
-                            <ul>
-                                <li><a href="">Current Flight Status</a></li>
-                                <li><a href="">Destinations</a></li>
-                                <li><a href="">Timetable</a></li>
-                                <li><a href="">Cancellation information</a></li>
-                            </ul>
-                            <h4>FOLLOW US</h4>
-                            <a href=""><img src="assets/images/yt-logo.png" alt=""></a>
-                            <a href=""><img src="assets/images/fb-logo.png" alt=""></a>
-                            <a href=""><img src="assets/images/Twitter-logo.png" alt=""></a>
-                            <a href=""><img src="assets/images/insta-logo.png" alt=""></a>
-                        </article>
-                    </div>
-                    <div class="col-md-3">
-                        <article>
-                            <h4>ABOUT WIZZ AIR</h4>
-                            <ul>
-                                <li><a href="">Company information</a></li>
-                                <li><a href="">News</a></li>
-                                <li><a href="">ITAir Magazine</a></li>
-                                <li><a href="">Career</a></li>
-                                <li><a href="">Press Office</a></li>
-                                <li><a href="">For travel agents &amp; partners</a></li>
-                            </ul>
-                        </article>
-                    </div>
+    </main>
+    <main id="userProfile">
+        <ul>
+            <h5>Резервирани полети: </h5>
+        </ul>
+    </main>
+
+    <footer>
+        <div class="container container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <article>
+                        <h4>SERVICES</h4>
+                        <ul>
+                            <li><a href="">ITAir Discount Club</a></li>
+                            <li><a href="">ITAir Flex</a></li>
+                            <li><a href="">ITAir Priority Boarding</a></li>
+                            <li><a href="">Seat allocation</a></li>
+                            <li><a href="">Hotels</a></li>
+                            <li><a href="">Car rentals</a></li>
+                            <li><a href="">Airport transfer</a></li>
+                            <li><a href="">All services and fees</a></li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="col-md-3">
+                    <article>
+                        <h4>CUSTOMER SERVICE</h4>
+                        <ul>
+                            <li><a href="">Booking with ITAir</a></li>
+                            <li><a href="">Baggage</a></li>
+                            <li><a href="">Payments</a></li>
+                            <li><a href="">Special Assistance</a></li>
+                            <li><a href="">Online check-in</a></li>
+                            <li><a href="">General Conditions of Carriage</a></li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="col-md-3">
+                    <article>
+                        <h4>FLIGHTS &amp; DESTINATIONS</h4>
+                        <ul>
+                            <li><a href="">Current Flight Status</a></li>
+                            <li><a href="">Destinations</a></li>
+                            <li><a href="">Timetable</a></li>
+                            <li><a href="">Cancellation information</a></li>
+                        </ul>
+                        <h4>FOLLOW US</h4>
+                        <a href=""><img src="assets/images/yt-logo.png" alt=""></a>
+                        <a href=""><img src="assets/images/fb-logo.png" alt=""></a>
+                        <a href=""><img src="assets/images/Twitter-logo.png" alt=""></a>
+                        <a href=""><img src="assets/images/insta-logo.png" alt=""></a>
+                    </article>
+                </div>
+                <div class="col-md-3">
+                    <article>
+                        <h4>ABOUT WIZZ AIR</h4>
+                        <ul>
+                            <li><a href="">Company information</a></li>
+                            <li><a href="">News</a></li>
+                            <li><a href="">ITAir Magazine</a></li>
+                            <li><a href="">Career</a></li>
+                            <li><a href="">Press Office</a></li>
+                            <li><a href="">For travel agents &amp; partners</a></li>
+                        </ul>
+                    </article>
                 </div>
             </div>
-        </footer>
-        <div id="planmenu">
-            <section>
-                <h1>ЗАПОЗНАЙТЕ СЕ С ВЪЗМОЖНОСТИТЕ СИ ЗА ПЪТУВАНЕ</h1>
-                <button type="button">
->>>>>>> 2c6f86dd1a04b9828b531128240fa2553a16de72
-                        <article>
-                            <h4>ИЗБЕРЕТЕ ПОЛЕТ</h4>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                        </article>
-                    </button>
-                <button type="button">
-                        <article>
-                            <h4>ИЗБЕРЕТЕ ПОЛЕТ</h4>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                        </article>
-                    </button>
-                <button type="button">
-                        <article>
-                            <h4>ИЗБЕРЕТЕ ПОЛЕТ</h4>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                        </article>
-                    </button>
-<<<<<<< HEAD
-        </section>
-    </div> -->
-                <form class="popUp" id="signIn" action="" method="GET">
-                    <div class="formName">
-                        <p>Sign In</p>
-                        <i class="closeTab">×</i>
-                    </div>
-                    <label>E-mail<input id="mail" type="text" placeholder="E-mail"></label>
-                    <label>Password<input id="pass" type="password" placeholder="Password"></label>
-                    <input id="signInButton" type="submit" value="Sign in">
-                    <input id="cancelButton" type="submit" value="Cancel">
-                    <a id="registerButton" href="">Registration</a>
-                </form>
-                <form class="popUp" id="registration" action="" method="POST">
-                    <div class="formName">
-                        <p>Register</p>
-                        <i class="closeTab">×</i>
-                    </div>
-                    <input type="text" placeholder="First name">
-                    <input type="text" placeholder="Last name">
-                    <input type="text" placeholder="Mobile phone">
-                    <input type="text" placeholder="E-mail">
-                    <input type="password" placeholder="Password">
-                    <input id="createUser" type="submit" value="Register">
-                    <input id="cancelRegistration" type="submit" value="Cancel">
-                </form>
-
-                =======
-                </section>
         </div>
-        <form class="popUp" id="signIn" action="" method="GET">
-            <div class="formName">
-                <p>Sign In</p>
-                <i class="closeTab">×</i>
-            </div>
-            <label>E-mail<input id="mail" type="text" placeholder="E-mail"></label>
-            <label>Password<input id="pass" type="password" placeholder="Password"></label>
-            <input id="signInButton" type="submit" value="Sign in">
-            <input id="cancelButton" type="submit" value="Cancel">
-            <a id="registerButton" href="">Registration</a>
-        </form>
-        <form class="popUp" id="registration" action="" method="POST">
-            <div class="formName">
-                <p>Register</p>
-                <i class="closeTab">×</i>
-            </div>
-            <input type="text" placeholder="First name">
-            <input type="text" placeholder="Last name">
-            <input type="text" placeholder="Mobile phone">
-            <input type="text" placeholder="E-mail">
-            <input type="password" placeholder="Password">
-            <input id="createUser" type="submit" value="Register">
-            <input id="cancelRegistration" type="submit" value="Cancel">
-        </form>
-        >>>>>>> 2c6f86dd1a04b9828b531128240fa2553a16de72
+    </footer>
+
+    <form class="popUp" id="signIn" action="" method="GET">
+        <div class="formName">
+            <p>Sign In</p>
+            <i class="closeTab">×</i>
+        </div>
+        <label>E-mail<input id="mail" type="text" placeholder="E-mail"></label>
+        <label>Password<input id="pass" type="password" placeholder="Password"></label>
+        <input id="signInButton" type="submit" value="Sign in">
+        <input id="cancelButton" type="submit" value="Cancel">
+        <a id="registerButton" href="">Registration</a>
+    </form>
+    <form class="popUp" id="registration" action="" method="POST">
+        <div class="formName">
+            <p>Register</p>
+            <i class="closeTab">×</i>
+        </div>
+        <input type="text" placeholder="First name">
+        <input type="text" placeholder="Last name">
+        <input type="text" placeholder="Mobile phone">
+        <input type="text" placeholder="E-mail">
+        <input type="password" placeholder="Password">
+        <input id="createUser" type="submit" value="Register">
+        <input id="cancelRegistration" type="submit" value="Cancel">
+    </form>
+    </section>
+    </div>
+    <form class="popUp" id="signIn" action="" method="GET">
+        <div class="formName">
+            <p>Sign In</p>
+            <i class="closeTab">×</i>
+        </div>
+        <label>E-mail<input id="mail" type="text" placeholder="E-mail"></label>
+        <label>Password<input id="pass" type="password" placeholder="Password"></label>
+        <input id="signInButton" type="submit" value="Sign in">
+        <input id="cancelButton" type="submit" value="Cancel">
+        <a id="registerButton" href="">Registration</a>
+    </form>
+    <form class="popUp" id="registration" action="" method="POST">
+        <div class="formName">
+            <p>Register</p>
+            <i class="closeTab">×</i>
+        </div>
+        <input type="text" placeholder="First name">
+        <input type="text" placeholder="Last name">
+        <input type="text" placeholder="Mobile phone">
+        <input type="text" placeholder="E-mail">
+        <input type="password" placeholder="Password">
+        <input id="createUser" type="submit" value="Register">
+        <input id="cancelRegistration" type="submit" value="Cancel">
+    </form>
 </body>
 
 </html>
