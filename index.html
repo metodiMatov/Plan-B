@@ -50,7 +50,7 @@
             </div>
         </nav>
     </header>
-    <main id="first">
+    <main id="first" style="display:none">
         <div class="container main-container">
             <div class="row search-row">
                 <aside class="col-md-3 buttons container">
@@ -224,115 +224,402 @@
     </main>
     <footer>
         <div class="container container-fluid">
-            <div class="row">
-                <div class="col-md-3">
-                    <article>
-                        <h4>SERVICES</h4>
-                        <ul>
-                            <li><a href="">ITAir Discount Club</a></li>
-                            <li><a href="">ITAir Flex</a></li>
-                            <li><a href="">ITAir Priority Boarding</a></li>
-                            <li><a href="">Seat allocation</a></li>
-                            <li><a href="">Hotels</a></li>
-                            <li><a href="">Car rentals</a></li>
-                            <li><a href="">Airport transfer</a></li>
-                            <li><a href="">All services and fees</a></li>
-                        </ul>
-                    </article>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="ticket-tamplate">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <p id="flight-title" class="text-center">FLIGHT NAME</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-md-offset-4">
+                                        <p id="flight-date" class="text-center">DATE</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p id="flight-time">Date</p>
+                                        <p id="flight-time">HOUR OF HTE FLIGHT</p>
+                                    </div>
+                                    <div class="col-md-3 col-md-offset-5">
+                                        <p id="flight-price">PRICE</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 ">
+                                        <button>Continue</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <article>
-                        <h4>CUSTOMER SERVICE</h4>
-                        <ul>
-                            <li><a href="">Booking with ITAir</a></li>
-                            <li><a href="">Baggage</a></li>
-                            <li><a href="">Payments</a></li>
-                            <li><a href="">Special Assistance</a></li>
-                            <li><a href="">Online check-in</a></li>
-                            <li><a href="">General Conditions of Carriage</a></li>
-                        </ul>
-                    </article>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="ticket-tamplate">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <p id="flight-title" class="text-center">FLIGHT NAME</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-md-offset-4">
+                                        <p id="flight-date" class="text-center">DATE</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p id="flight-time">Date</p>
+                                        <p id="flight-time">HOUR OF HTE FLIGHT</p>
+                                    </div>
+                                    <div class="col-md-3 col-md-offset-5">
+                                        <p id="flight-price">PRICE</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 ">
+                                        <button>Continue</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <article>
-                        <h4>FLIGHTS &amp; DESTINATIONS</h4>
-                        <ul>
-                            <li><a href="">Current Flight Status</a></li>
-                            <li><a href="">Destinations</a></li>
-                            <li><a href="">Timetable</a></li>
-                            <li><a href="">Cancellation information</a></li>
-                        </ul>
-                        <h4>FOLLOW US</h4>
-                        <a href=""><img src="assets/images/yt-logo.png" alt=""></a>
-                        <a href=""><img src="assets/images/fb-logo.png" alt=""></a>
-                        <a href=""><img src="assets/images/Twitter-logo.png" alt=""></a>
-                        <a href=""><img src="assets/images/insta-logo.png" alt=""></a>
-                    </article>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="baggage-tamplate-info">
+                            <div class="container">
+                                <div class="row">
+                                    <input type="text" placeholder="NAME">
+                                    <input type="text" placeholder="FAMILY">
+                                    <label for="male">Male</label>
+                                    <input type="checkbox" name="male">
+                                    <label for="female">Female</label>
+                                    <input type="checkbox" name="female">
+                                </div>
+                                <div class="row">
+                                    <label for="passanger">Passnager</label>
+                                    <input type="checkbox" name="passanger">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="baggage-pick">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="container">
+                                            <div class="row">
+                                                <p>Check-in baggage</p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <img src="" alt="">
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <img src="" alt="">
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <img src="" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div>
+                                                                PRice
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div>
+                                                                PRice
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div>
+                                                                PRice
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <p>In flightBaggae</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <img src="" alt="">
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <img src="" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div>
+                                                                PRice
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div>
+                                                                PRice
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-6">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <p>Check-in baggage</p>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <img src="" alt="">
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <img src="" alt="">
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <img src="" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div>
+                                                                    PRice
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div>
+                                                                    PRice
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div>
+                                                                    PRice
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <p>In flightBaggae</p>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <img src="" alt="">
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <img src="" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div>
+                                                                    PRice
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div>
+                                                                    PRice
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <button>Continue</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <article>
-                        <h4>ABOUT WIZZ AIR</h4>
-                        <ul>
-                            <li><a href="">Company information</a></li>
-                            <li><a href="">News</a></li>
-                            <li><a href="">ITAir Magazine</a></li>
-                            <li><a href="">Career</a></li>
-                            <li><a href="">Press Office</a></li>
-                            <li><a href="">For travel agents &amp; partners</a></li>
-                        </ul>
-                    </article>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="ticket-tamplate">
+                            <div class="flight-seats">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="ticket-tamplate">
+                            <div class="ticket-servey">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!-- <div id="planmenu">
+            <<<<<<< HEAD </footer>
+                <!-- <div id="planmenu">
         <section>
             <h1>ЗАПОЗНАЙТЕ СЕ С ВЪЗМОЖНОСТИТЕ СИ ЗА ПЪТУВАНЕ</h1>
             <button type="button">
+=======
+        <footer>
+            <div class="container container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        <article>
+                            <h4>SERVICES</h4>
+                            <ul>
+                                <li><a href="">ITAir Discount Club</a></li>
+                                <li><a href="">ITAir Flex</a></li>
+                                <li><a href="">ITAir Priority Boarding</a></li>
+                                <li><a href="">Seat allocation</a></li>
+                                <li><a href="">Hotels</a></li>
+                                <li><a href="">Car rentals</a></li>
+                                <li><a href="">Airport transfer</a></li>
+                                <li><a href="">All services and fees</a></li>
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="col-md-3">
+                        <article>
+                            <h4>CUSTOMER SERVICE</h4>
+                            <ul>
+                                <li><a href="">Booking with ITAir</a></li>
+                                <li><a href="">Baggage</a></li>
+                                <li><a href="">Payments</a></li>
+                                <li><a href="">Special Assistance</a></li>
+                                <li><a href="">Online check-in</a></li>
+                                <li><a href="">General Conditions of Carriage</a></li>
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="col-md-3">
+                        <article>
+                            <h4>FLIGHTS &amp; DESTINATIONS</h4>
+                            <ul>
+                                <li><a href="">Current Flight Status</a></li>
+                                <li><a href="">Destinations</a></li>
+                                <li><a href="">Timetable</a></li>
+                                <li><a href="">Cancellation information</a></li>
+                            </ul>
+                            <h4>FOLLOW US</h4>
+                            <a href=""><img src="assets/images/yt-logo.png" alt=""></a>
+                            <a href=""><img src="assets/images/fb-logo.png" alt=""></a>
+                            <a href=""><img src="assets/images/Twitter-logo.png" alt=""></a>
+                            <a href=""><img src="assets/images/insta-logo.png" alt=""></a>
+                        </article>
+                    </div>
+                    <div class="col-md-3">
+                        <article>
+                            <h4>ABOUT WIZZ AIR</h4>
+                            <ul>
+                                <li><a href="">Company information</a></li>
+                                <li><a href="">News</a></li>
+                                <li><a href="">ITAir Magazine</a></li>
+                                <li><a href="">Career</a></li>
+                                <li><a href="">Press Office</a></li>
+                                <li><a href="">For travel agents &amp; partners</a></li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div id="planmenu">
+            <section>
+                <h1>ЗАПОЗНАЙТЕ СЕ С ВЪЗМОЖНОСТИТЕ СИ ЗА ПЪТУВАНЕ</h1>
+                <button type="button">
+>>>>>>> 2c6f86dd1a04b9828b531128240fa2553a16de72
                         <article>
                             <h4>ИЗБЕРЕТЕ ПОЛЕТ</h4>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                         </article>
                     </button>
-            <button type="button">
+                <button type="button">
                         <article>
                             <h4>ИЗБЕРЕТЕ ПОЛЕТ</h4>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                         </article>
                     </button>
-            <button type="button">
+                <button type="button">
                         <article>
                             <h4>ИЗБЕРЕТЕ ПОЛЕТ</h4>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                         </article>
                     </button>
+<<<<<<< HEAD
         </section>
     </div> -->
-    <form class="popUp" id="signIn" action="" method="GET">
-        <div class="formName">
-            <p>Sign In</p>
-            <i class="closeTab">×</i>
-        </div>
-        <label>E-mail<input id="mail" type="text" placeholder="E-mail"></label>
-        <label>Password<input id="pass" type="password" placeholder="Password"></label>
-        <input id="signInButton" type="submit" value="Sign in">
-        <input id="cancelButton" type="submit" value="Cancel">
-        <a id="registerButton" href="">Registration</a>
-    </form>
-    <form class="popUp" id="registration" action="" method="POST">
-        <div class="formName">
-            <p>Register</p>
-            <i class="closeTab">×</i>
-        </div>
-        <input type="text" placeholder="First name">
-        <input type="text" placeholder="Last name">
-        <input type="text" placeholder="Mobile phone">
-        <input type="text" placeholder="E-mail">
-        <input type="password" placeholder="Password">
-        <input id="createUser" type="submit" value="Register">
-        <input id="cancelRegistration" type="submit" value="Cancel">
-    </form>
+                <form class="popUp" id="signIn" action="" method="GET">
+                    <div class="formName">
+                        <p>Sign In</p>
+                        <i class="closeTab">×</i>
+                    </div>
+                    <label>E-mail<input id="mail" type="text" placeholder="E-mail"></label>
+                    <label>Password<input id="pass" type="password" placeholder="Password"></label>
+                    <input id="signInButton" type="submit" value="Sign in">
+                    <input id="cancelButton" type="submit" value="Cancel">
+                    <a id="registerButton" href="">Registration</a>
+                </form>
+                <form class="popUp" id="registration" action="" method="POST">
+                    <div class="formName">
+                        <p>Register</p>
+                        <i class="closeTab">×</i>
+                    </div>
+                    <input type="text" placeholder="First name">
+                    <input type="text" placeholder="Last name">
+                    <input type="text" placeholder="Mobile phone">
+                    <input type="text" placeholder="E-mail">
+                    <input type="password" placeholder="Password">
+                    <input id="createUser" type="submit" value="Register">
+                    <input id="cancelRegistration" type="submit" value="Cancel">
+                </form>
 
+                =======
+                </section>
+        </div>
+        <form class="popUp" id="signIn" action="" method="GET">
+            <div class="formName">
+                <p>Sign In</p>
+                <i class="closeTab">×</i>
+            </div>
+            <label>E-mail<input id="mail" type="text" placeholder="E-mail"></label>
+            <label>Password<input id="pass" type="password" placeholder="Password"></label>
+            <input id="signInButton" type="submit" value="Sign in">
+            <input id="cancelButton" type="submit" value="Cancel">
+            <a id="registerButton" href="">Registration</a>
+        </form>
+        <form class="popUp" id="registration" action="" method="POST">
+            <div class="formName">
+                <p>Register</p>
+                <i class="closeTab">×</i>
+            </div>
+            <input type="text" placeholder="First name">
+            <input type="text" placeholder="Last name">
+            <input type="text" placeholder="Mobile phone">
+            <input type="text" placeholder="E-mail">
+            <input type="password" placeholder="Password">
+            <input id="createUser" type="submit" value="Register">
+            <input id="cancelRegistration" type="submit" value="Cancel">
+        </form>
+        >>>>>>> 2c6f86dd1a04b9828b531128240fa2553a16de72
 </body>
 
 </html>

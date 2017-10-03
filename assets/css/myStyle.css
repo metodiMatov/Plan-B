@@ -323,3 +323,27 @@
         background-color: white;
         z-index: 1001;
     }
+    
+    .ticket-tamplate {
+        border: 2px solid pink;
+        border-radius: 1em;
+        height: 400px;
+        background-color: #DDDDDD;
+        margin: 7em 10em;
+    }
+    
+    .baggage-tamplate-info {
+        border: 2px solid pink;
+        border-radius: 1em;
+        height: 200px;
+        background-color: #DDDDDD;
+        margin: 7em 10em;
+    }
+    
+    .baggage-pick {
+        border: 2px solid pink;
+        border-radius: 1em;
+        height: 600px;
+        background-color: #DDDDDD;
+        margin: 7em 10em;
+    }
