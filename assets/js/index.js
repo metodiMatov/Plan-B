@@ -163,6 +163,38 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
     });
+
+    $('#departure-date').change(function(e){
+
+        console.log();
+        var startDate = $('#departure-date').val();
+        var city =$('#destination-select').val();
+        var newDates = [];
+        
+        var dates = [];
+        //var d = new Date("03/25/2015");
+        getOptions().then(function(destinations){
+
+            destinations.forEach(function(e){
+                if(e.name == city){
+                    dates = e.returnFlights
+                }
+            })
+            $('#return-date option').remove();
+            $('#return-date').append('<option selected=selected> One way</option>');
+            dates.forEach(function(e){
+                if( new Date(e.date)  > new Date(startDate) ){
+                    dates.push(e.date)
+                    $('#return-date').append('<option value='+ "e.date" +'> '+ e.date +'</option>');
+                }
+
+            })
+        })
+
+
+
+    })
+
     var searchbutton = document.querySelector('#search-button');
     searchbutton.addEventListener('click', function(event) {
         event.preventDefault();
