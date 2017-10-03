@@ -59,13 +59,11 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         var userConfirmation = users.findUser(mail.value, pass.value);
         if (userConfirmation) {
-            var li = document.querySelector("nav li:last-child");
-            var userName = document.createElement("button");
+            user.style.display = "none";
+            var userName = document.getElementById("profile");
             userName.textContent = userConfirmation.firstName + " " + userConfirmation.lastName;
-            userName.setAttribute("class", "nav");
-            li.appendChild(userName);
-            user.parentNode.removeChild(user);
             showMenu(user, "signIn", false);
+            $('main').unblock();
         }
     }, false);
 
@@ -110,6 +108,20 @@ document.addEventListener("DOMContentLoaded", function() {
         $('main').unblock();
     }, false);
 
+    document.getElementById("profile").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (document.getElementById("userProfile").style.display == "none") {
+            // $('main').block();
+            $("#first").hide();
+            document.getElementById("userProfile").style.display = "block";
+        } else {
+            // if (document.getElementById("userProfile").style.display == "block") {
+            // $('main').unblock();
+            $("#first").show();
+            document.getElementById("userProfile").style.display = "none";
+        }
+    })
+
     getOptions().then(function(destinations) {
         // var templateText = document.getElementById('destinations-template').innerHTML;
         // var templateFunc = Handlebars.compile(templateText);
@@ -126,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function() {
         selectDestination.addEventListener("change", function(event) {
             for (var index = 0; index < 7; index++) {
                 document.getElementById("departure-date").innerHTML = null;
-                document.getElementById("return-date").innerHTML = '<option selected="selected" placeholder="Select date">One way</option>';
+                document.getElementById("return-date").innerHTML = '<option selected="selected">One way</option>';
                 if (selectDestination.value == destinations[index].name) {
                     var depatrureDates = destinations[index].flights.map(d => d = d.date);
                     depatrureDates.forEach(function(date) {
@@ -138,25 +150,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     var returnDates = destinations[index].returnFlights.map(d => d = d.date);
                     var selectedDepartureDate = document.querySelector('#departure-date option').value;
-                    console.log(selectedDepartureDate);
-                    returnDates.forEach(function(date) {
-                        var retMonthDay = date.split('/');
-                        var depMonthDay = selectedDepartureDate.split('/');
-                        if (retMonthDay[0] == depMonthDay[0]) {
-                            if (retMonthDay[1] > depMonthDay[1]) {
-                                var op = document.createElement("option");
-                                op.value = date;
-                                op.textContent = date;
-                                document.getElementById("return-date").appendChild(op);
+                    document.getElementById("departure-date").addEventListener("change", function() {
+                        document.getElementById("return-date").innerHTML = '<option selected="selected">One way</option>';
+                        returnDates.forEach(function(date) {
+
+                            var retMonthDay = date.split('/');
+                            var depMonthDay = selectedDepartureDate.split('/');
+                            if (retMonthDay[0] == depMonthDay[0]) {
+                                if (Number(retMonthDay[1]) > Number(depMonthDay[1])) {
+                                    console.log(date);
+                                    var op = document.createElement("option");
+                                    op.value = date;
+                                    op.textContent = date;
+                                    document.getElementById("return-date").appendChild(op);
+                                }
+                            } else {
+                                if (Number(retMonthDay[0]) > Number(depMonthDay[0])) {
+                                    console.log(date);
+                                    var opt = document.createElement("option");
+                                    opt.value = date;
+                                    opt.textContent = date;
+                                    document.getElementById("return-date").appendChild(opt);
+                                }
                             }
-                        } else {
-                            if (retMonthDay[0] > depMonthDay[0]) {
-                                var op = document.createElement("option");
-                                op.value = date;
-                                op.textContent = date;
-                                document.getElementById("return-date").appendChild(op);
-                            }
-                        }
+                        })
                     })
                     break;
                 }
@@ -168,4 +185,18 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
 
     });
+
+    // $("#profile").on("click", function(event) {
+    //     if (document.getElementById("userProfile").style.display = "block") {
+    //         showMenu("#profile", "#userProfile", false);
+    //         $("#userProfile").hide();
+    //         $('main').unblock();
+    //     } else {
+    //         $('main').block();
+    //         showMenu("#profile", "#userProfile", true);
+    //         $("#userProfile").css("display", "block");
+    //         // .style.display = "block";
+    //     }
+    // })
+
 });

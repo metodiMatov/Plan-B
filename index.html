@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/myStyle.css">
     <link rel="stylesheet" href="node_modules/bootstrap-select/dist/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"> -->
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="assets/js/blockUI.js"></script>
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/displayOptions.js"></script>
     <script src="assets/js/users.js"></script>
-    <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+    <!-- <script src="node_modules/handlebars/dist/handlebars.min.js"></script> -->
     <script src="node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
     <script src="node_modules/bootstrap-select/dist/js/i18n/defaults-en_US.min.js"></script>
-    <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.eu.min.js"></script>
+    <!-- <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script> -->
+    <!-- <script src="node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.eu.min.js"></script> -->
     <script src="assets/js/index.js"></script>
 
 
@@ -44,6 +44,7 @@
                         <li><button type="button" id="info">ИНФОРМАЦИЯ</button></li>
                         <li><button type="button" id="book">РЕЗЕРВИРАЙТЕ</button></li> -->
                         <li><button type="button" id="user">ПОТРЕБИТЕЛ</button></li>
+                        <li> <button type="button" id="profile"></button></li>
                     </ul>
                 </div>
             </div>
@@ -214,7 +215,12 @@
         </div>
     </main>
     <main id="second">
-        
+
+    </main>
+    <main id="userProfile">
+        <ul>
+            <h5>Резервирани полети: </h5>
+        </ul>
     </main>
     <footer>
         <div class="container container-fluid">
@@ -279,7 +285,7 @@
             </div>
         </div>
     </footer>
-    <div id="planmenu">
+    <!-- <div id="planmenu">
         <section>
             <h1>ЗАПОЗНАЙТЕ СЕ С ВЪЗМОЖНОСТИТЕ СИ ЗА ПЪТУВАНЕ</h1>
             <button type="button">
@@ -301,7 +307,7 @@
                         </article>
                     </button>
         </section>
-    </div>
+    </div> -->
     <form class="popUp" id="signIn" action="" method="GET">
         <div class="formName">
             <p>Sign In</p>
@@ -326,6 +332,7 @@
         <input id="createUser" type="submit" value="Register">
         <input id="cancelRegistration" type="submit" value="Cancel">
     </form>
+
 </body>
 
 </html>
