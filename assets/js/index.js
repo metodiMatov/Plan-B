@@ -236,6 +236,8 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     document.getElementById('fl-dest').innerHTML = '<h2> SOFIA  --->  ' + destinationValue + '</h2>';
     document.getElementById('next-price').addEventListener('click',function (event) {
-        
+        event.preventDefault();
+        document.getElementById('select-price').style.display = 'none';
+        document.getElementById('select-baggage').style.display = 'block';
     });
 });
