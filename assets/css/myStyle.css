@@ -396,6 +396,8 @@
         border-radius: 1em;
     }
     .select-price{
+    }
+    .select-baggage{
         display: none;
     }
     #next-price{
