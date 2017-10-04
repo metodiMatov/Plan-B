@@ -48,7 +48,7 @@
             </div>
         </nav>
     </header>
-    <main id="first">
+    <main id="first" style="display:none">
         <div class="container main-container">
             <div class="row search-row">
                 <aside class="col-md-3 buttons container">
@@ -208,257 +208,93 @@
         <div class="line">
         </div>
     </main>
-    <main id="second">
-        <div class="container container-fluid">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="ticket-tamplate">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6 col-md-offset-3">
-                                        <p id="flight-title" class="text-center">FLIGHT NAME</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4 col-md-offset-4">
-                                        <p id="flight-date" class="text-center">DATE</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <p id="flight-time">Date</p>
-                                        <p id="flight-time">HOUR OF HTE FLIGHT</p>
-                                    </div>
-                                    <div class="col-md-3 col-md-offset-5">
-                                        <p id="flight-price">PRICE</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4 ">
-                                        <button>Continue</button>
-                                    </div>
-                                </div>
+    <main id="second-main">
+        <div class="container">
+            <div class="row" style="margin-bottom: 5em">
+                <div class="container select-price ticket-select" style="display:none">
+                    <div class="row fl-destination-name">
+                        <div class="col-md-4 col-md-offset-4">
+                            <h2 id="fl-dest">FLIGHT DESTINATION</h2>
+                        </div>
+                    </div>
+                    <div class="row fl-destination-date">
+                        <div class="col-md-4 col-md-offset-4">
+                            <h3 id="fl-date">FLIGHT DATE</h3>
+                        </div>
+                    </div>
+                    <div class="row fl-classes">
+                        <div class="col-md-3">
+                            <h3 id="fl-hour">EXACT HOUR OF THE FLIGHT</h3>
+                        </div>
+                        <div class="col-md-3">
+                            <h4 id="fl-hour">Basic class</h4>
+                            <div id="basic-class" class="class-price-picker">
+                                <p>PRICE</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <h4 id="fl-hour">Second class</h4>
+                            <div id="basic-class" class="class-price-picker">
+                                <p>PRICE</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <h4 id="fl-hour">First class</h4>
+                            <div id="basic-class" class="class-price-picker">
+                                <p>PRICE</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="ticket-tamplate">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6 col-md-offset-3">
-                                        <p id="flight-title" class="text-center">FLIGHT NAME</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4 col-md-offset-4">
-                                        <p id="flight-date" class="text-center">DATE</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <p id="flight-time">Date</p>
-                                        <p id="flight-time">HOUR OF HTE FLIGHT</p>
-                                    </div>
-                                    <div class="col-md-3 col-md-offset-5">
-                                        <p id="flight-price">PRICE</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4 ">
-                                        <button>Continue</button>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="row button-next">
+                        <div class="col-md-3">
+                            <button id="next-price" class="btn btn-primary">Next</button>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="baggage-tamplate-info">
-                            <div class="container">
-                                <div class="row">
-                                    <input type="text" placeholder="NAME">
-                                    <input type="text" placeholder="FAMILY">
-                                    <label for="male">Male</label>
-                                    <input type="checkbox" name="male">
-                                    <label for="female">Female</label>
-                                    <input type="checkbox" name="female">
-                                </div>
-                                <div class="row">
-                                    <label for="passanger">Passnager</label>
-                                    <input type="checkbox" name="passanger">
-                                </div>
+                <div class="container select-baggage ticket-select">
+                    <div class="row fl-destination-name">
+                        <div class="col-md-4 col-md-offset-3">
+                            <h2 id="fl-dest">Choose Type of Baggage</h2>
+                        </div>
+                    </div>
+                    <div class="row fl-classes">
+                        <div class="col-md-3">
+                            <h4 id="fl-hour">NONE</h4>
+                            <img src="https://argonaut.fourthelement.com/img/drysuits/none.png" alt="">
+                            <div id="basic-class" class="class-price-picker">
+                                <p>PRICE</p>
                             </div>
                         </div>
-                        <div class="baggage-pick">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="container">
-                                            <div class="row">
-                                                <p>Check-in baggage</p>
-                                            </div>
-                                            <div class="row">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div>
-                                                                PRice
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div>
-                                                                PRice
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div>
-                                                                PRice
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <p>In flightBaggae</p>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div>
-                                                                PRice
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div>
-                                                                PRice
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="col-md-6">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <p>Check-in baggage</p>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <div class="col-md-4">
-                                                                <img src="" alt="">
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <img src="" alt="">
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <img src="" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-4">
-                                                                <div>
-                                                                    PRice
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div>
-                                                                    PRice
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div>
-                                                                    PRice
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <p>In flightBaggae</p>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-4">
-                                                                <img src="" alt="">
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <img src="" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-4">
-                                                                <div>
-                                                                    PRice
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div>
-                                                                    PRice
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <button>Continue</button>
-                                    </div>
-                                </div>
+                        <div class="col-md-3">
+                            <h4 id="fl-hour">Hand</h4>
+                            <img src="http://www.freeiconspng.com/uploads/baggage-icon-png-19.png" alt="">
+                            <div id="basic-class" class="class-price-picker">
+                                <p>PRICE</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <h4 id="fl-hour">Check-in</h4>
+                            <img src="https://cdn1.iconfinder.com/data/icons/airport-set-1/512/39-512.png" alt="">
+                            <div id="basic-class" class="class-price-picker">
+                                <p>PRICE</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <h4 id="fl-hour">Hand + Check-in</h4>
+                            <img src="https://media.rbl.ms/image?u=%2Ffiles%2F2016%2F04%2F23%2F635969748559569785-243177581_Travel_1-512.png&ho=https%3A%2F%2Faz616578.vo.msecnd.net&s=483&h=c4e4b6a0fb90cdb1c44ba037512f66c767df890395ac4ebcec693a25a22d59a2&size=980x&c=451587962" alt="">
+                            <div id="basic-class" class="class-price-picker">
+                                <p>PRICE</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="ticket-tamplate">
-                            <div class="flight-seats">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="ticket-tamplate">
-                            <div class="ticket-servey">
-
-                            </div>
+                    <div class="row button-next">
+                        <div class="col-md-3 btn-buy">
+                            <button id="next-price" class="btn btn-primary">Buy Ticket</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </main>
     <main id="userProfile">
         <ul>
