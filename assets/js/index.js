@@ -154,35 +154,32 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     });
 
-    $('#departure-date').change(function(e){
+    $('#departure-date').change(function(e) {
 
         console.log();
         var startDate = $('#departure-date').val();
-        var city =$('#destination-select').val();
+        var city = $('#destination-select').val();
         var newDates = [];
-        
+
         var dates = [];
         //var d = new Date("03/25/2015");
-        getOptions().then(function(destinations){
+        getOptions().then(function(destinations) {
 
-            destinations.forEach(function(e){
-                if(e.name == city){
+            destinations.forEach(function(e) {
+                if (e.name == city) {
                     dates = e.returnFlights
                 }
             })
             $('#return-date option').remove();
             $('#return-date').append('<option selected=selected> One way</option>');
-            dates.forEach(function(e){
-                if( new Date(e.date)  > new Date(startDate) ){
+            dates.forEach(function(e) {
+                if (new Date(e.date) > new Date(startDate)) {
                     dates.push(e.date)
-                    $('#return-date').append('<option value='+ "e.date" +'> '+ e.date +'</option>');
+                    $('#return-date').append('<option value=' + "e.date" + '> ' + e.date + '</option>');
                 }
 
             })
         })
-
-
-
     })
 
     var searchbutton = document.querySelector('#search-button');
@@ -190,4 +187,37 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
 
     });
+
+    function fillUp(city) {
+        document.querySelector("div#specialCity img").src = "assets/images/" + city.name.toLowerCase() + ".jpg";
+        document.querySelector("div#specialCity h1").innerHTML = city.name;
+        document.querySelector("div#specialCity p").innerHTML = city.bio;
+        $("#specialCity").show();
+    }
+
+    $(".article-city").on("click", function(event) {
+        $('main').block({ message: null });
+        var city = this.id.toLowerCase();
+        if (city == "milan") {
+            fillUp(milan);
+        }
+        if (city == "paris") {
+            fillUp(paris);
+        }
+        if (city == "frankfurt") {
+            fillUp(frankfurt);
+        }
+        if (city == "budapest") {
+            fillUp(budapest);
+        }
+    })
+
+    $("#specialCity i").on("click", function() {
+        $("#specialCity").hide();
+        $('main').unblock();
+    })
+
+    $(".footer a").on("click", function(event) {
+        event.preventDefault();
+    })
 });

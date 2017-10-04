@@ -14,6 +14,7 @@
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/displayOptions.js"></script>
     <script src="assets/js/users.js"></script>
+    <script src="assets/js/specialOffers.js"></script>
     <!-- <script src="node_modules/handlebars/dist/handlebars.min.js"></script> -->
     <script src="node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
     <script src="node_modules/bootstrap-select/dist/js/i18n/defaults-en_US.min.js"></script>
@@ -129,38 +130,38 @@
             <h3>CHEAP FLIGHTS*</h3>
             <div class="row">
                 <div class="col-md-3 ">
-                    <button class="article-buttons">
+                    <button class="article-buttons article-city" id="milan">
                             <article>
                                     <img src="assets/images/milano.jpg" alt="">
-                                    <p>Special offer.Cheap flight form London</p>
-                                    <p>MILANO</p>
+                                    <p>Special offer.Cheap flight form Sofia</p>
+                                    <p>MILAN</p>
                                 </article>
                     </button>
                 </div>
                 <div class="col-md-3">
-                    <button class="article-buttons">
+                    <button class="article-buttons article-city" id="budapest">
                                 <article>
-                                        <img src="assets/images/prague.jpg" alt="">
-                                        <p>Special offer.Cheap flight form London</p>
-                                        <p>PAGUE</p>
+                                        <img src="assets/images/budapest.jpg" alt="">
+                                        <p>Special offer.Cheap flight form Sofia</p>
+                                        <p>BUDAPEST</p>
                                     </article>
                         </button>
                 </div>
                 <div class="col-md-3 ">
-                    <button class="article-buttons">
+                    <button class="article-buttons article-city" id="frankfurt">
                                 <article>
-                                        <img src="assets/images/poland.jpg" alt="">
-                                        <p>Special offer.Cheap flight form London</p>
-                                        <p>POLAND</p>
+                                        <img src="assets/images/frankfurt.jpg" alt="">
+                                        <p>Special offer.Cheap flight form Sofia</p>
+                                        <p>FRANKFURT</p>
                                     </article>
                         </button>
                 </div>
                 <div class="col-md-3">
-                    <button class="article-buttons">
+                    <button class="article-buttons article-city" id="paris">
                                 <article>
-                                        <img src="assets/images/barca.jpg" alt="">
-                                        <p>Special offer.Cheap flight form London</p>
-                                        <p>BARCELONA</p>
+                                        <img src="assets/images/paris.jpg" alt="">
+                                        <p>Special offer.Cheap flight form Sofia</p>
+                                        <p>PARIS</p>
                                     </article>
                         </button>
                 </div>
@@ -173,23 +174,24 @@
                     <button class="article-buttons">
                                 <article>
                                         <img src="assets/images/booking.jpg" alt="">
-                                        <p>BOOKING</p>
+                                        <a href="https://www.booking.com" target="_blank"><p>BOOKING</p></a>
                                     </article>
                         </button>
+
                 </div>
                 <div class="col-md-3 ">
                     <button class="article-buttons">
                                     <article>
                                             <img src="assets/images/carrent.jpg" alt="">
-                                            <p>CAR RENT</p>
-                                        </article>
+                                            <a href="http://www.rentalcars.com" target="_blank"><p>CAR RENT</p></a>
+                                    </article>
                             </button>
                 </div>
                 <div class="col-md-3 ">
                     <button class="article-buttons">
                                     <article>
                                             <img src="assets/images/transfer.jpg" alt="">
-                                            <p>TRANSFER</p>
+                                            <a href="https://www.holidaytaxis.com" target="_blank"><p>TRANSFER</p></a>
                                         </article>
                             </button>
                 </div>
@@ -197,7 +199,7 @@
                     <button class="article-buttons">
                                     <article>
                                             <img src="assets/images/praking.jpg" alt="">
-                                            <p>PARKING</p>
+                                            <a href="https://www.sofia-airport.bg/en/passengers/and-airport/parking" target="_blank"><p>PARKING</p></a>
                                         </article>
                             </button>
                 </div>
@@ -468,7 +470,7 @@
         <div class="container container-fluid">
             <div class="row">
                 <div class="col-md-3">
-                    <article>
+                    <article class="footer">
                         <h4>SERVICES</h4>
                         <ul>
                             <li><a href="">ITAir Discount Club</a></li>
@@ -483,7 +485,7 @@
                     </article>
                 </div>
                 <div class="col-md-3">
-                    <article>
+                    <article class="footer">
                         <h4>CUSTOMER SERVICE</h4>
                         <ul>
                             <li><a href="">Booking with ITAir</a></li>
@@ -496,7 +498,7 @@
                     </article>
                 </div>
                 <div class="col-md-3">
-                    <article>
+                    <article class="footer">
                         <h4>FLIGHTS &amp; DESTINATIONS</h4>
                         <ul>
                             <li><a href="">Current Flight Status</a></li>
@@ -512,7 +514,7 @@
                     </article>
                 </div>
                 <div class="col-md-3">
-                    <article>
+                    <article class="footer">
                         <h4>ABOUT WIZZ AIR</h4>
                         <ul>
                             <li><a href="">Company information</a></li>
@@ -578,6 +580,12 @@
         <input id="createUser" type="submit" value="Register">
         <input id="cancelRegistration" type="submit" value="Cancel">
     </form>
+    <div id="specialCity">
+        <i class="closeTab">×</i>
+        <img src="" alt="">
+        <h1></h1>
+        <p></p>
+    </div>
 </body>
 
 </html>
