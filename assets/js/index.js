@@ -132,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function() {
                             var depMonthDay = selectedDepartureDate.split('/');
                             if (retMonthDay[0] == depMonthDay[0]) {
                                 if (Number(retMonthDay[1]) > Number(depMonthDay[1])) {
-                                    console.log(date);
                                     var op = document.createElement("option");
                                     op.value = date;
                                     op.textContent = date;
@@ -140,7 +139,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                 }
                             } else {
                                 if (Number(retMonthDay[0]) > Number(depMonthDay[0])) {
-                                    console.log(date);
                                     var opt = document.createElement("option");
                                     opt.value = date;
                                     opt.textContent = date;
