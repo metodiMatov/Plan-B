@@ -412,6 +412,7 @@
         font-weight: bold;
         padding: 1.5em;
         color: purple;
+        font-size: 1.5em;
     }
     .class-price-picker:hover{
         border: 2px solid purple;
