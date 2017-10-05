@@ -174,12 +174,13 @@ document.addEventListener("DOMContentLoaded", function() {
             dates.forEach(function(e) {
                 if (new Date(e.date) > new Date(startDate)) {
                     dates.push(e.date)
-                    $('#return-date').append('<option value=' + "e.date" + '> ' + e.date + '</option>');
+                    $('#return-date').append('<option value=' + e.date + '> ' + e.date + '</option>');
                 }
 
             })
         })
     })
+
     var destinationValue = document.getElementById("destination-select").value;
     var searchbutton = document.querySelector('#search-button');
     searchbutton.addEventListener('click', function(event) {
