@@ -425,4 +425,7 @@
     #select-baggage img{
         width: 250px;
     }
+    #return-flight-ticket{
+        border: 1px solid black;
+    }
     
