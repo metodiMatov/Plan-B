@@ -185,35 +185,37 @@ document.addEventListener("DOMContentLoaded", function() {
     var searchbutton = document.querySelector('#search-button');
     searchbutton.addEventListener('click', function(event) {
         event.preventDefault();
-        var secondMain = document.getElementById('second-main');
-        if (document.getElementById('destination-select').value != 'Select destination') {
-            main.style.display = "none";
-            secondMain.style.display = "block";
-            document.getElementById('fl-dest').textContent = 'SOFIA  --->  ' + document.getElementById("destination-select").value;
-            document.getElementById('fl-date').textContent ="Flight Date: " +document.getElementById('departure-date').value;
-            getOptions().then(function(destinations){
-                var currentDestination = document.getElementById("destination-select").value;
-                var destination = destinations.find(d => d.name == currentDestination);
-                var prices = destination.flights[0].price;
-                document.querySelector("#basic-class > p").textContent = prices[0] + "lv";
-                document.querySelector("#second-class > p").textContent = prices[1] + "lv";
-                document.querySelector("#third-class > p").textContent = prices[2] + "lv";
-                var departureHour = destination.flights[0].departure;
-                var landingHour = destination.flights[0].landing;
-                document.getElementById('fl-hour').textContent ='Departure Time: ' + departureHour + 'h';
-                document.getElementById('fl-landing').textContent ='Landing Time: ' + landingHour + 'h';
-                if (document.getElementById('return-date')) {
-                    
-                }  
-            });
+        if (user.style.display === "none") {
+            var secondMain = document.getElementById('second-main');
+            if (document.getElementById('destination-select').value != 'Select destination') {
+                main.style.display = "none";
+                secondMain.style.display = "block";
+                document.getElementById('fl-dest').textContent = 'SOFIA  --->  ' + document.getElementById("destination-select").value;
+                document.getElementById('fl-date').textContent = "Flight Date: " + document.getElementById('departure-date').value;
+                getOptions().then(function(destinations) {
+                    var currentDestination = document.getElementById("destination-select").value;
+                    var destination = destinations.find(d => d.name == currentDestination);
+                    var prices = destination.flights[0].price;
+                    document.querySelector("#basic-class > p").textContent = prices[0] + "lv";
+                    document.querySelector("#second-class > p").textContent = prices[1] + "lv";
+                    document.querySelector("#third-class > p").textContent = prices[2] + "lv";
+                    var departureHour = destination.flights[0].departure;
+                    var landingHour = destination.flights[0].landing;
+                    document.getElementById('fl-hour').textContent = 'Departure Time: ' + departureHour + 'h';
+                    document.getElementById('fl-landing').textContent = 'Landing Time: ' + landingHour + 'h';
+                    if (document.getElementById('return-date')) {
+
+                    }
+                });
+            } else {
+                // var form = document.getElementById('div-search-btn');
+                var p = document.querySelector("#error");
+                p.textContent = 'Invalid search input !';
+                document.querySelector('div label[for="destination"]').style.color = 'red';
+            }
         } else {
-            var form = document.getElementById('div-search-btn');
-            var p = document.createElement('p');
-            p.textContent = 'Invalid search input !';
-            p.style.color = 'red';
-            p.style.fontWeight = 'bold';
-            document.querySelector('div label[for="destination"]').style.color = 'red';
-            form.appendChild(p);
+            var p = document.querySelector("#error");
+            p.textContent = "Please sign in your profile to continue";
         }
 
     });

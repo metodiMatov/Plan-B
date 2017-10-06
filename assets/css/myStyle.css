@@ -1,5 +1,6 @@
     #logo {
-        width: 70px;
+        width: 210px;
+        height: 77px;
         margin-top: 0.2em;
         margin-left: 3em;
     }
@@ -120,6 +121,12 @@
         border-top-left-radius: 1em;
     }
     
+    @media screen and (max-width: 1200px) {
+        .search-form {
+            height: 600px;
+        }
+    }
+    
     .buttons>.row>.col-md-12>input {
         display: inline-block;
         width: 100%;
@@ -183,18 +190,17 @@
         display: none;
         position: absolute;
         top: 200px;
-        left: 500px;
+        left: 400px;
         /* height: 400px; */
         background-color: white;
-        border-radius: 5px;
         box-sizing: border-box;
         border-radius: 1em;
     }
     
     @media screen and (max-width: 768px) {
         .popUp {
-            width: 30%;
             left: 50px;
+            width: 80%
         }
     }
     
@@ -376,53 +382,81 @@
         height: 50px;
         padding: 5px;
     }
-    #second-main{
+    
+    @media screen and (max-width: 760px) {
+        div#specialCity {
+            left: 40px;
+            width: 80%;
+        }
+    }
+    
+    #second-main {
         background: url('../images/barca.jpg') no-repeat;
         background-size: cover;
         background-clip: border-box;
         box-sizing: border-box;
-        margin:0;
+        margin: 0;
         padding: 0;
-
     }
-    #second-main h3,h4,p {
+    
+    #second-main h3,
+    h4,
+    p {
         text-align: center;
     }
-    .ticket-select{
+    
+    .ticket-select {
         background-color: whitesmoke;
         opacity: 0.9;
-        margin-top:5em;
+        margin-top: 5em;
         padding: 2em;
         border-radius: 1em;
     }
     
-    #select-baggage{
+    #select-baggage {
         display: none;
     }
-    #next-price{
-        margin: 1em;;
+    
+    #next-price {
+        margin: 1em;
+        ;
     }
-    .class-price-picker{
+    
+    .class-price-picker {
         background: gray;
         width: 10em;
         height: 5em;
         margin-left: 4em;
     }
-    .class-price-picker > p{
+    
+    .class-price-picker>p {
         font-weight: bold;
         padding: 1.5em;
         color: purple;
         font-size: 1.5em;
     }
-    .class-price-picker:hover{
+    
+    .class-price-picker:hover {
         border: 2px solid purple;
         cursor: pointer;
-    }    
-    .button-next{
+    }
+    
+    .button-next {
         margin-top: 4em;
         margin-left: 2em;
     }
-    #select-baggage img{
+    
+    #select-baggage img {
         width: 250px;
     }
     
+    p#error {
+        color: red;
+        font-weight: bold;
+        margin-top: -1em;
+    }
+    
+    .pass-input {
+        display: inline-block;
+        width: 25%;
+    }

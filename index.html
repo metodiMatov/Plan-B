@@ -8,18 +8,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/myStyle.css">
     <link rel="stylesheet" href="node_modules/bootstrap-select/dist/css/bootstrap-select.min.css">
-    <!-- <link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"> -->
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="assets/js/blockUI.js"></script>
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/displayOptions.js"></script>
     <script src="assets/js/users.js"></script>
     <script src="assets/js/specialOffers.js"></script>
-    <!-- <script src="node_modules/handlebars/dist/handlebars.min.js"></script> -->
     <script src="node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
     <script src="node_modules/bootstrap-select/dist/js/i18n/defaults-en_US.min.js"></script>
-    <!-- <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script> -->
-    <!-- <script src="node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.eu.min.js"></script> -->
     <script src="assets/js/index.js"></script>
 
 
@@ -37,7 +33,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                    <img id="logo" src="assets/images/it-logo.png" alt="">
+                    <img id="logo" src="assets/images/logo.png" alt="">
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav navbar-right">
@@ -53,10 +49,10 @@
             <div class="row search-row">
                 <aside class="col-md-3 buttons container">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12 imgFlight">
                             <input type="image" src="assets/images/plane.png">
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 imgFlight">
                             <input type="image" src="assets/images/planner.png">
                         </div>
                     </div>
@@ -100,15 +96,15 @@
                                 <div class="form-group">
                                     <label for="passangers">Passangers:</label>
                                     <br/>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-10 pass-input">
                                         <label for="return" class="col-lg-2 control-label">Adults</label>
                                         <input class="passengers" type="number" value="1" min="1" max="15">
                                     </div>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-10 pass-input">
                                         <label for="passangers" class="col-lg-2 control-label">Kids</label>
                                         <input class="passengers" type="number" value="0" min="0" max="15">
                                     </div>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-10 pass-input">
                                         <label for="passangers" class="col-lg-2 control-label">Infants</label>
                                         <input class="passengers" type="number" value="0" min="0" max="9">
                                     </div>
@@ -119,6 +115,7 @@
                                     <button type="submit" id="search-button" class="btn btn-primary">SEARCH</button>
                                 </div>
                             </div>
+                            <p id="error"></p>
                         </fieldset>
                     </form>
                 </div>
