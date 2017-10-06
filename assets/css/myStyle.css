@@ -1,462 +1,466 @@
-    #logo {
-        width: 210px;
-        height: 77px;
-        margin-top: 0.2em;
-        margin-left: 3em;
-    }
-    
-    .navbar-nav {
-        margin-right: 6em;
-    }
-    
-    nav .collapse ul li button {
-        color: white;
-        background-color: Transparent;
-        text-decoration: none;
-        border: none;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 14px;
-        height: 80px;
-        text-align: center;
-    }
-    
-    .navbar {
-        margin-bottom: 0;
-    }
-    
-    .main-container {
-        height: 800px;
-        background: url("../images/prague.jpg") no-repeat;
-        background-size: cover;
-        background-clip: border-box;
-        box-sizing: border-box;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .carusel {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
-    
-    #second-pic {
-        display: none;
-    }
-    
-    #third-pic {
-        display: none;
-    }
-    
-    .attention-line {
-        background-color: yellow;
-        height: 50px;
-    }
-    
-    .cheap-flights>.row>.col-md-3>button>article>img {
-        width: 300px;
-        height: 200px;
-    }
-    
-    .partners>.row>.col-md-3>button>article>img {
-        width: 300px;
-        height: 200px;
-    }
-    
-    footer {
-        background-color: rgb(242, 242, 242);
-        width: 100%;
-        display: inline-block;
-    }
-    
-    footer article h4 {
-        color: black;
-        font-weight: bold;
-        padding: 5px;
-    }
-    
-    footer article ul {
-        list-style: none;
-    }
-    
-    footer article ul li {
-        padding: 5px;
-    }
-    
-    footer article ul li a {
-        color: purple;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 14px;
-    }
-    
-    a {
-        text-decoration: none;
-    }
-    
-    footer a img {
-        width: 30px;
-        height: 30px;
-        margin-left: 10px;
-    }
-    
-    .search-form {
-        display: inline-block;
-        height: 500px;
-        width: 100%;
-        background-color: #ECECEC;
-        margin: 2em 0 0 0;
-        padding: 0;
-        border-radius: 1em;
-        border-top-left-radius: 0;
-    }
-    
-    .buttons {
-        width: 100px;
-        padding: 0;
-        margin: 2em 0 0 1em;
-        background-color: #ECECEC;
-        border-top-left-radius: 1em;
-    }
-    
-    @media screen and (max-width: 1200px) {
-        .search-form {
-            height: 600px;
-        }
-    }
-    
-    .buttons>.row>.col-md-12>input {
-        display: inline-block;
-        width: 100%;
-        border-radius: 1em;
-        background-color: whitesmoke;
-    }
-    
-    .buttons>.row>.col-md-12>input:hover {
-        background-color: #B1A7A7;
-    }
-    
-    .search {
-        padding: 0;
-    }
-    
-    .article-buttons {
-        background-color: white;
-        border: 0;
-    }
-    
-    .section-color {
-        background-color: whitesmoke;
-    }
-    
-    .line {
-        height: 50px;
-        background-color: whitesmoke;
-    }
-    
-    .search-row {
-        margin: 0;
-    }
-    
-    .col-lg-offset-4 {
-        margin-left: 0;
-    }
-    
-    .form-horizontal .form-group {
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 1em;
-    }
-    
-    #flights {
-        padding: 10px;
-    }
-    
-    #planmenu {
-        z-index: 1001;
-        background-color: white;
-        width: 100%;
-        position: absolute;
-        top: 80px;
-        display: none;
-        box-sizing: border-box;
-    }
-    
-    .popUp {
-        z-index: 1001;
-        width: 35%;
-        display: none;
-        position: absolute;
-        top: 200px;
-        left: 400px;
-        /* height: 400px; */
-        background-color: white;
-        box-sizing: border-box;
-        border-radius: 1em;
-    }
-    
-    @media screen and (max-width: 768px) {
-        .popUp {
-            left: 50px;
-            width: 80%
-        }
-    }
-    
-    .formName {
-        width: 100%;
-        height: 50px;
-        background-color: rgb(231, 224, 224);
-        box-sizing: border-box;
-    }
-    
-    #signIn label {
-        font-size: 15px;
-        text-align: center;
-        display: block;
-        margin-top: 1em;
-    }
-    
-    #signInButton {
-        color: #ffffff;
-        background-color: #BD04BD;
-        border-color: #BD04BD;
-    }
-    
-    #cancelButton {
-        color: #ffffff;
-        background-color: #178acc;
-        border-color: #1684c2;
-    }
-    
-    #signIn label {
-        font-size: 15px;
-        text-align: center;
-        display: block;
-        margin-top: 1em;
-    }
-    
-    #signIn input {
-        display: block;
-        margin: auto;
-        height: 2em;
-        width: 50%;
-        border-radius: 5px;
-    }
-    
-    form#signIn input[type=submit] {
-        width: 50%;
-        height: 2.5em;
-        margin: auto;
-        margin-top: 1.5em;
-    }
-    
-    #signIn a {
-        color: purple;
-        display: block;
-        text-align: center;
-        padding-top: 1em;
-        text-decoration: underline;
-        margin-bottom: 1em;
-    }
-    
-    .formName p {
-        color: #178acc;
-        padding: 10px;
-        text-align: center;
-        font-size: 2em;
-        display: inline-block;
-    }
-    
-    .closeTab {
-        float: right;
-        font-size: 3em;
-        color: purple;
-        cursor: pointer;
-    }
-    
-    form a {
-        text-decoration: none;
-    }
-    /* #registration {
+ #logo {
+     width: 210px;
+     height: 77px;
+     margin-top: 0.2em;
+     margin-left: 3em;
+ }
+ 
+ .navbar-nav {
+     margin-right: 6em;
+ }
+ 
+ nav .collapse ul li button {
+     color: rgb(219, 241, 251);
+     background-color: Transparent;
+     text-decoration: none;
+     border: none;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 18px;
+     height: 80px;
+     text-align: center;
+ }
+ 
+ .navbar {
+     margin-bottom: 0;
+ }
+ 
+ .main-container {
+     height: 800px;
+     background: url("../images/prague.jpg") no-repeat;
+     background-size: cover;
+     background-clip: border-box;
+     box-sizing: border-box;
+     width: 100%;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ .carusel {
+     width: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: -1;
+ }
+ 
+ #second-pic {
+     display: none;
+ }
+ 
+ #third-pic {
+     display: none;
+ }
+ 
+ .attention-line {
+     background-color: yellow;
+     height: 50px;
+ }
+ 
+ .cheap-flights>.row>.col-md-3>button>article>img {
+     width: 300px;
+     height: 200px;
+ }
+ 
+ .partners>.row>.col-md-3>button>article>img {
+     width: 300px;
+     height: 200px;
+ }
+ 
+ footer {
+     background-color: rgb(242, 242, 242);
+     width: 100%;
+     display: inline-block;
+ }
+ 
+ footer article h4 {
+     color: black;
+     font-weight: bold;
+     padding: 5px;
+ }
+ 
+ footer article ul {
+     list-style: none;
+ }
+ 
+ footer article ul li {
+     padding: 5px;
+ }
+ 
+ footer article ul li a {
+     color: purple;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 14px;
+ }
+ 
+ a {
+     text-decoration: none;
+ }
+ 
+ footer a img {
+     width: 30px;
+     height: 30px;
+     margin-left: 10px;
+ }
+ 
+ .search-form {
+     display: inline-block;
+     height: 500px;
+     width: 100%;
+     background-color: #ECECEC;
+     margin: 2em 0 0 0;
+     padding: 0;
+     border-radius: 1em;
+     border-top-left-radius: 0;
+ }
+ 
+ .buttons {
+     width: 100px;
+     padding: 0;
+     margin: 2em 0 0 1em;
+     background-color: #ECECEC;
+     border-top-left-radius: 1em;
+ }
+ 
+ @media screen and (max-width: 1200px) {
+     .search-form {
+         height: 600px;
+     }
+ }
+ 
+ .buttons>.row>.col-md-12>input {
+     display: inline-block;
+     width: 100%;
+     border-radius: 1em;
+     background-color: whitesmoke;
+ }
+ 
+ .buttons>.row>.col-md-12>input:hover {
+     background-color: #B1A7A7;
+ }
+ 
+ .search {
+     padding: 0;
+ }
+ 
+ .article-buttons {
+     background-color: white;
+     border: 0;
+ }
+ 
+ .section-color {
+     background-color: whitesmoke;
+ }
+ 
+ .line {
+     height: 50px;
+     background-color: whitesmoke;
+ }
+ 
+ .search-row {
+     margin: 0;
+ }
+ 
+ .col-lg-offset-4 {
+     margin-left: 0;
+ }
+ 
+ .form-horizontal .form-group {
+     margin-left: 0;
+     margin-right: 0;
+     padding-left: 1em;
+ }
+ 
+ #flights {
+     padding: 10px;
+ }
+ 
+ #planmenu {
+     z-index: 1001;
+     background-color: white;
+     width: 100%;
+     position: absolute;
+     top: 80px;
+     display: none;
+     box-sizing: border-box;
+ }
+ 
+ .popUp {
+     z-index: 1001;
+     width: 35%;
+     display: none;
+     position: absolute;
+     top: 200px;
+     left: 400px;
+     /* height: 400px; */
+     background-color: white;
+     box-sizing: border-box;
+     border-radius: 1em;
+ }
+ 
+ @media screen and (max-width: 768px) {
+     .popUp {
+         left: 50px;
+         width: 80%
+     }
+ }
+ 
+ .formName {
+     width: 100%;
+     height: 50px;
+     background-color: rgb(231, 224, 224);
+     box-sizing: border-box;
+ }
+ 
+ #signIn label {
+     font-size: 15px;
+     text-align: center;
+     display: block;
+     margin-top: 1em;
+ }
+ 
+ #signInButton {
+     color: #ffffff;
+     background-color: #BD04BD;
+     border-color: #BD04BD;
+ }
+ 
+ #cancelButton {
+     color: #ffffff;
+     background-color: #178acc;
+     border-color: #1684c2;
+ }
+ 
+ #signIn label {
+     font-size: 15px;
+     text-align: center;
+     display: block;
+     margin-top: 1em;
+ }
+ 
+ #signIn input {
+     display: block;
+     margin: auto;
+     height: 2em;
+     width: 50%;
+     border-radius: 5px;
+ }
+ 
+ form#signIn input[type=submit] {
+     width: 50%;
+     height: 2.5em;
+     margin: auto;
+     margin-top: 1.5em;
+ }
+ 
+ #signIn a {
+     color: purple;
+     display: block;
+     text-align: center;
+     padding-top: 1em;
+     text-decoration: underline;
+     margin-bottom: 1em;
+ }
+ 
+ .formName p {
+     color: #178acc;
+     padding: 10px;
+     text-align: center;
+     font-size: 2em;
+     display: inline-block;
+ }
+ 
+ .closeTab {
+     float: right;
+     font-size: 3em;
+     color: purple;
+     cursor: pointer;
+ }
+ 
+ form a {
+     text-decoration: none;
+ }
+ /* #registration {
     height: 600px;
 } */
-    
-    #registration input {
-        display: block;
-        margin: auto;
-        padding: 0.5em;
-        margin-top: 1em;
-        border-radius: 3px;
-        width: 50%;
-        margin-bottom: 1em;
-    }
-    
-    #createUser {
-        background-color: purple;
-        color: white;
-        font-weight: bolder;
-    }
-    
-    #cancelRegistration {
-        background-color: #178acc;
-        color: white;
-        font-weight: bolder;
-    }
-    
-    #departure-margin {
-        margin-top: 1em;
-        margin-left: -0.5em;
-    }
-    
-    .form-group>.mf {
-        padding: 1em;
-        margin-left: -0.5em;
-    }
-    
-    .passengers {
-        margin-left: 1em;
-    }
-    
-    #userProfile {
-        display: none;
-        position: absolute;
-        margin: auto;
-        top: 100px;
-        width: 100%;
-        background-color: white;
-        z-index: 1001;
-    }
-    
-    .ticket-tamplate {
-        border: 2px solid pink;
-        border-radius: 1em;
-        height: 400px;
-        background-color: #DDDDDD;
-        margin: 7em 10em;
-    }
-    
-    .baggage-tamplate-info {
-        border: 2px solid pink;
-        border-radius: 1em;
-        height: 200px;
-        background-color: #DDDDDD;
-        margin: 7em 10em;
-    }
-    
-    .baggage-pick {
-        border: 2px solid pink;
-        border-radius: 1em;
-        height: 600px;
-        background-color: #DDDDDD;
-        margin: 7em 10em;
-    }
-    
-    div#specialCity {
-        position: absolute;
-        width: 55%;
-        margin: auto;
-        display: none;
-        z-index: 1001;
-        height: fit-content;
-        left: 350px;
-        top: 1000px;
-        background-color: white;
-        text-align: center;
-        border-radius: 10px;
-    }
-    
-    div#specialCity img {
-        width: 100%;
-        height: 300px;
-    }
-    
-    div#specialCity h1,
-    button.article-city>article>p:last-of-type {
-        color: #821782;
-    }
-    
-    div#specialCity i {
-        top: -10px;
-        height: 50px;
-        padding: 5px;
-    }
-    
-    @media screen and (max-width: 760px) {
-        div#specialCity {
-            left: 40px;
-            width: 80%;
-        }
-    }
-    
-    #second-main {
-        background: url('../images/barca.jpg') no-repeat;
-        background-size: cover;
-        background-clip: border-box;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    
-    #second-main h3,
-    h4,
-    p {
-        text-align: center;
-    }
-    
-    .ticket-select {
-        background-color: whitesmoke;
-        opacity: 0.9;
-        margin-top: 5em;
-        padding: 2em;
-        border-radius: 1em;
-    }
-    
-    #select-baggage {
-        display: none;
-    }
-    
-    #next-price {
-        margin: 1em;
-        ;
-    }
-    
-    .class-price-picker {
-        background: gray;
-        width: 10em;
-        height: 5em;
-        margin-left: 4em;
-    }
-    
-    .class-price-picker>p {
-        font-weight: bold;
-        padding: 1.5em;
-        color: purple;
-        font-size: 1.5em;
-    }
-    
-    .class-price-picker:hover {
-        border: 2px solid purple;
-        cursor: pointer;
-    }
-    
-    .button-next {
-        margin-top: 4em;
-        margin-left: 2em;
-    }
-    
-    #select-baggage img {
-        width: 250px;
-    }
-    
-    p#error {
-        color: red;
-        font-weight: bold;
-        margin-top: -1em;
-    }
-    
-    .pass-input {
-        display: inline-block;
-        width: 25%;
-    }
+ 
+ #registration input {
+     display: block;
+     margin: auto;
+     padding: 0.5em;
+     margin-top: 1em;
+     border-radius: 3px;
+     width: 50%;
+     margin-bottom: 1em;
+ }
+ 
+ #createUser {
+     background-color: purple;
+     color: white;
+     font-weight: bolder;
+ }
+ 
+ #cancelRegistration {
+     background-color: #178acc;
+     color: white;
+     font-weight: bolder;
+ }
+ 
+ #departure-margin {
+     margin-top: 1em;
+     margin-left: -0.5em;
+ }
+ 
+ .form-group>.mf {
+     padding: 1em;
+     margin-left: -0.5em;
+ }
+ 
+ .passengers {
+     margin-left: 1em;
+ }
+ 
+ #userProfile {
+     display: none;
+     position: absolute;
+     margin: auto;
+     top: 100px;
+     width: 100%;
+     background-color: white;
+     z-index: 1001;
+ }
+ 
+ .ticket-tamplate {
+     border: 2px solid pink;
+     border-radius: 1em;
+     height: 400px;
+     background-color: #DDDDDD;
+     margin: 7em 10em;
+ }
+ 
+ .baggage-tamplate-info {
+     border: 2px solid pink;
+     border-radius: 1em;
+     height: 200px;
+     background-color: #DDDDDD;
+     margin: 7em 10em;
+ }
+ 
+ .baggage-pick {
+     border: 2px solid pink;
+     border-radius: 1em;
+     height: 600px;
+     background-color: #DDDDDD;
+     margin: 7em 10em;
+ }
+ 
+ div#specialCity {
+     position: absolute;
+     width: 55%;
+     margin: auto;
+     display: none;
+     z-index: 1001;
+     height: fit-content;
+     left: 350px;
+     top: 1000px;
+     background-color: white;
+     text-align: center;
+     border-radius: 10px;
+ }
+ 
+ div#specialCity img {
+     width: 100%;
+     height: 300px;
+ }
+ 
+ div#specialCity h1,
+ button.article-city>article>p:last-of-type {
+     color: #821782;
+ }
+ 
+ div#specialCity i {
+     top: -10px;
+     height: 50px;
+     padding: 5px;
+ }
+ 
+ @media screen and (max-width: 760px) {
+     div#specialCity {
+         left: 40px;
+         width: 80%;
+     }
+ }
+ 
+ #second-main {
+     background: url('../images/barca.jpg') no-repeat;
+     background-size: cover;
+     background-clip: border-box;
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ #second-main h3,
+ h4,
+ p {
+     text-align: center;
+ }
+ 
+ .ticket-select {
+     background-color: whitesmoke;
+     opacity: 0.9;
+     margin-top: 5em;
+     padding: 2em;
+     border-radius: 1em;
+ }
+ 
+ #select-baggage {
+     display: none;
+ }
+ 
+ #next-price {
+     margin: 1em;
+     ;
+ }
+ 
+ .class-price-picker {
+     background: gray;
+     width: 10em;
+     height: 5em;
+     margin-left: 4em;
+ }
+ 
+ .class-price-picker>p {
+     font-weight: bold;
+     padding: 1.5em;
+     color: purple;
+     font-size: 1.5em;
+ }
+ 
+ .class-price-picker:hover {
+     border: 2px solid purple;
+     cursor: pointer;
+ }
+ 
+ .button-next {
+     margin-top: 4em;
+     margin-left: 2em;
+ }
+ 
+ #select-baggage img {
+     width: 250px;
+ }
+ 
+ p#error {
+     color: red;
+     font-weight: bold;
+     margin-top: -1em;
+ }
+ 
+ .pass-input {
+     display: inline-block;
+     width: 25%;
+ }
+ 
+ #return-flight-ticket {
+     border: 1px solid black;
+ }

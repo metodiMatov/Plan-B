@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             user.style.display = "none";
             var userName = document.getElementById("profile");
             userName.textContent = userConfirmation.firstName + " " + userConfirmation.lastName;
+            userName.style.color = "rgb(219,241,251)";
             showMenu(user, "signIn", false);
             $('main').unblock();
         }
@@ -190,21 +191,35 @@ document.addEventListener("DOMContentLoaded", function() {
             if (document.getElementById('destination-select').value != 'Select destination') {
                 main.style.display = "none";
                 secondMain.style.display = "block";
-                document.getElementById('fl-dest').textContent = 'SOFIA  --->  ' + document.getElementById("destination-select").value;
+                var currentDestination = document.getElementById("destination-select").value;
+                document.getElementById('fl-dest').textContent = 'SOFIA  --->  ' + currentDestination;
                 document.getElementById('fl-date').textContent = "Flight Date: " + document.getElementById('departure-date').value;
                 getOptions().then(function(destinations) {
-                    var currentDestination = document.getElementById("destination-select").value;
+
                     var destination = destinations.find(d => d.name == currentDestination);
-                    var prices = destination.flights[0].price;
+                    let prices = destination.flights[0].price;
                     document.querySelector("#basic-class > p").textContent = prices[0] + "lv";
                     document.querySelector("#second-class > p").textContent = prices[1] + "lv";
                     document.querySelector("#third-class > p").textContent = prices[2] + "lv";
-                    var departureHour = destination.flights[0].departure;
-                    var landingHour = destination.flights[0].landing;
+                    let departureHour = destination.flights[0].departure;
+                    let landingHour = destination.flights[0].landing;
                     document.getElementById('fl-hour').textContent = 'Departure Time: ' + departureHour + 'h';
                     document.getElementById('fl-landing').textContent = 'Landing Time: ' + landingHour + 'h';
-                    if (document.getElementById('return-date')) {
-
+                    document.getElementById('ticket-type-oneway').textContent = 'Ticket Type: One Way Ticket';
+                    if (document.getElementById('return-date').value !== 'One way') {
+                        let prices = destination.flights[1].price;
+                        let departureHour = destination.flights[1].departure;
+                        let landingHour = destination.flights[1].landing;
+                        document.getElementById('rt-dest').textContent = currentDestination + ' ---> SOFIA';
+                        document.getElementById('rt-date').textContent = "Flight Date: " + document.getElementById('return-date').value;
+                        document.querySelector("#rt-basic-class > p").textContent = prices[0] + "lv";
+                        document.querySelector("#rt-second-class > p").textContent = prices[1] + "lv";
+                        document.querySelector("#rt-third-class > p").textContent = prices[2] + "lv";
+                        document.getElementById('return-flight-ticket').style.display = 'block';
+                        document.getElementById('ticket-type-oneway').textContent = 'Ticket Type: Two Way Ticket';
+                        document.getElementById('rt-hour').textContent = 'Departure Time: ' + departureHour + 'h';
+                        document.getElementById('rt-landing').textContent = 'Landing Time: ' + landingHour + 'h';
+                        document.getElementById('ticket-type-twoway').textContent = 'Ticket Type: One Way Ticket';
                     }
                 });
             } else {
@@ -254,6 +269,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     document.getElementById('next-price').addEventListener('click', function(event) {
         event.preventDefault();
+        document.getElementById('return-flight-ticket').style.display = 'none';
         document.getElementById('select-price').style.display = 'none';
         document.getElementById('select-baggage').style.display = 'block';
     });
