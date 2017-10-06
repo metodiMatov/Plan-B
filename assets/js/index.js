@@ -207,9 +207,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.getElementById('fl-landing').textContent = 'Landing Time: ' + landingHour + 'h';
                     document.getElementById('ticket-type-oneway').textContent = 'Ticket Type: One Way Ticket';
                     //origin, destination, clasa, baggage, calculatedPrice,isOneWay
-                    let origin =
-                        ticket.addProperties();
-                    ticket.claculatedPrice();
                     if (document.getElementById('return-date').value !== 'One way') {
                         let prices = destination.flights[1].price;
                         let departureHour = destination.flights[1].departure;
