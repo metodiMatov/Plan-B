@@ -46,6 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
             userName.style.color = "rgb(219,241,251)";
             showMenu(user, "signIn", false);
             $('main').unblock();
+            document.querySelector("p#ur-first-name").innerHTML += userConfirmation.firstName;
+            document.querySelector("p#ur-family-name").innerHTML += userConfirmation.lastName;
+            document.querySelector("p#ur-money").innerHTML += userConfirmation.money;
         }
     }, false);
 
@@ -64,8 +67,9 @@ document.addEventListener("DOMContentLoaded", function() {
         var phone = document.querySelector("form#registration input[placeholder='Mobile phone']").value;
         var email = document.querySelector("form#registration input[placeholder='E-mail']").value;
         var password = document.querySelector("form#registration input[placeholder='Password']").value;
-        if (firstName && lastName && phone && email && password) {
-            users.addUser(firstName, lastName, phone, email, password)
+        var money = document.querySelector("form#registration input[placeholder='Money']").value;
+        if (firstName && lastName && phone && email && password && money) {
+            users.addUser(firstName, lastName, phone, email, password, money)
             registrationForm.style.display = "none";
             showMenu(user, "signIn", true);
         } else {
@@ -91,13 +95,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById("profile").addEventListener("click", function(event) {
         event.preventDefault();
-        if (document.getElementById("userProfile").style.display == "none") {
+        if (document.getElementById("userProfile").style.display == "block") {
+            $("#first").show();
+            document.getElementById("userProfile").style.display = "none";
+        } else {
             $("#first").hide();
             document.querySelector("#second-main").style.display = "none";
             document.getElementById("userProfile").style.display = "block";
-        } else {
-            $("#first").show();
-            document.getElementById("userProfile").style.display = "none";
+
         }
     })
 
@@ -200,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     var destination = destinations.find(d => d.name == currentDestination);
                     let prices = destination.flights[0].price;
                     document.querySelector("#basic-class  p").textContent = prices[0] + "lv";
-                    document.querySelector("#basic-class  p").addEventListener('click',function (event) {
+                    document.querySelector("#basic-class  p").addEventListener('click', function(event) {
                         document.querySelector("#basic-class").style = 'border: 2px solid purple';
                     });
                     document.querySelector("#second-class  p").textContent = prices[1] + "lv";
@@ -278,12 +283,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('select-price').style.display = 'none';
         document.getElementById('select-baggage').style.display = 'block';
     });
-    document.querySelector('#buy-ticket').addEventListener('click', function (event) {
+    document.querySelector('#buy-ticket').addEventListener('click', function(event) {
         document.getElementById("select-baggage").style.display = "none";
         document.getElementById("userProfile").style.display = "block";
         // var user = user.find(u =>)
     });
-    document.querySelector('#sing-out').addEventListener('click',function (event) {
+    document.querySelector('#sing-out').addEventListener('click', function(event) {
         location.reload();
     });
 });

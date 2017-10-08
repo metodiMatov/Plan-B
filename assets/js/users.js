@@ -1,4 +1,4 @@
-function User(firstName, lastName, phone, mail, password,money) {
+function User(firstName, lastName, phone, mail, password, money) {
     if (typeof firstName == "string" && firstName.trim().length > 0 && typeof lastName == "string" && lastName.trim().length > 0 &&
         typeof phone == "string" && phone.startsWith("08") && phone.length == 10 && password.length >= 5) {
         this.firstName = firstName;
@@ -6,14 +6,14 @@ function User(firstName, lastName, phone, mail, password,money) {
         this.phone = phone;
         this.mail = mail;
         this.password = password;
-        this._tickets = [];
         this.money = money;
+        this._tickets = [];
     } else {
         throw new Error("Invalid data");
         alert("Invalid data!");
     }
 }
-User.prototype.buyTicket = function (ticket) {
+User.prototype.buyTicket = function(ticket) {
     if (ticket instanceof Ticket) {
         this._tickets.push(ticket);
     }
@@ -28,9 +28,9 @@ function UsersList() {
     }
 }
 
-UsersList.prototype.addUser = function(firstName, lastName, phone, mail, password) {
+UsersList.prototype.addUser = function(firstName, lastName, phone, mail, password, money) {
     if (!(this._users.some(user => user.mail === mail))) {
-        this._users.push(new User(firstName, lastName, phone, mail, password));
+        this._users.push(new User(firstName, lastName, phone, mail, password, money));
         localStorage.setItem('users', JSON.stringify(this._users));
     }
 }
@@ -48,4 +48,4 @@ UsersList.prototype.deleteUser = function(mail, pass) {
 }
 
 var users = new UsersList;
-users.addUser("Yoana", "Grigorova", "0886392532", "grigorova@gmail.com", "12345");
+users.addUser("Yoana", "Grigorova", "0886392532", "grigorova@gmail.com", "12345", 1000);

@@ -454,19 +454,20 @@
  #return-flight-ticket {
      border: 1px solid black;
  }
-<<<<<<< HEAD
- .user-properties p{
-    margin-top:1em;
-}
-.user-profile {
-    border: 1px solid purple;
-    border-radius: 1em;
-}
-.user-profile > div{
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-=======
+ 
+ .user-properties p {
+     margin-top: 1em;
+ }
+ 
+ .user-profile {
+     border: 1px solid purple;
+     border-radius: 1em;
+ }
+ 
+ .user-profile>div {
+     margin-top: 0.5em;
+     margin-bottom: 0.5em;
+ }
  
  div#select-baggage,
  div#radio-select-baggage {
@@ -522,4 +523,3 @@
          flex-direction: column;
      }
  }
->>>>>>> 5d214f1848ff39004fb9fc249ea8fa67ecea1f1f
