@@ -1,14 +1,5 @@
 var ticket = (function () {
     var number = 1;
-    function TicketList() {
-        this._tickets = [];
-    }
-    TicketList.prototype.addTicket = function (t1,t2) {
-        if (t1) {
-            
-        }
-        this._tickets.push(ticket);
-    }
     function Ticket(origin, destination, clasa, baggage, calculatedPrice,isOneWay) {
         this.id = number++;
         this.isOneWay = isOneWay;
@@ -25,6 +16,14 @@ var ticket = (function () {
             this.totalPrice = 2 * (basicPrice * baggagePrice);
         }
     }
+    Ticket.prototype.addTicket = function (origin, destination, clasa, baggage, calculatedPrice,isOneWay) {
+        this.isOneWay = isOneWay;
+        this.destination = destination;
+        this.origin = origin;
+        this.class = clasa;
+        this.baggage = baggage;
+        this.isOneWay = isOneWay;
+    }
     function DepartureTicket(origin, destination, clasa, baggage, calculatedPrice,isOneWay) {
         Ticket.call(this,origin, destination, clasa, baggage, calculatedPrice,isOneWay);
     }
@@ -37,5 +36,5 @@ var ticket = (function () {
     ReturnTicket.prototype = Object.create(Ticket.prototype);
     ReturnTicket.prototype.constructor = ReturnTicket;
 
-    return new TicketList();
+    return new Ticket();
 })();
