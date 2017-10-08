@@ -275,4 +275,8 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('select-price').style.display = 'none';
         document.getElementById('select-baggage').style.display = 'block';
     });
+    document.querySelector('#buy-ticket').addEventListener('click', function(event) {
+        document.getElementById("select-baggage").style.display = "none";
+        document.getElementById("userProfile").style.display = "block";
+    });
 });

@@ -423,12 +423,6 @@
      margin: 1em;
      ;
  }
- /* .class-price-picker {
-     background: gray;
-     width: 10em;
-     height: 5em;
-     margin-left: 4em;
- } */
  
  .class-price-picker>p {
      font-weight: bold;
@@ -436,10 +430,6 @@
      color: purple;
      font-size: 1.5em;
  }
- /* .class-price-picker:hover {
-     border: 2px solid purple;
-     cursor: pointer;
- } */
  
  .button-next {
      margin-top: 4em;
@@ -464,7 +454,6 @@
  #return-flight-ticket {
      border: 1px solid black;
  }
- /* radio buttons */
  
  div#select-baggage,
  div#radio-select-baggage {
