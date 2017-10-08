@@ -64,8 +64,9 @@ document.addEventListener("DOMContentLoaded", function() {
         var phone = document.querySelector("form#registration input[placeholder='Mobile phone']").value;
         var email = document.querySelector("form#registration input[placeholder='E-mail']").value;
         var password = document.querySelector("form#registration input[placeholder='Password']").value;
-        if (firstName && lastName && phone && email && password) {
-            users.addUser(firstName, lastName, phone, email, password)
+        var money = document.querySelector("form#registration input[placeholder='Money']").value;
+        if (firstName && lastName && phone && email && password && money) {
+            users.addUser(firstName, lastName, phone, email, password, money)
             registrationForm.style.display = "none";
             showMenu(user, "signIn", true);
         } else {
@@ -198,9 +199,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     var destination = destinations.find(d => d.name == currentDestination);
                     let prices = destination.flights[0].price;
-                    document.querySelector("#basic-class > p").textContent = prices[0] + "lv";
-                    document.querySelector("#second-class > p").textContent = prices[1] + "lv";
-                    document.querySelector("#third-class > p").textContent = prices[2] + "lv";
+                    document.querySelector("#basic-class  p").textContent = prices[0] + "lv";
+                    document.querySelector("#second-class  p").textContent = prices[1] + "lv";
+                    document.querySelector("#third-class  p").textContent = prices[2] + "lv";
                     let departureHour = destination.flights[0].departure;
                     let landingHour = destination.flights[0].landing;
                     document.getElementById('fl-hour').textContent = 'Departure Time: ' + departureHour + 'h';
@@ -213,9 +214,9 @@ document.addEventListener("DOMContentLoaded", function() {
                         let landingHour = destination.flights[1].landing;
                         document.getElementById('rt-dest').textContent = currentDestination + ' ---> SOFIA';
                         document.getElementById('rt-date').textContent = "Flight Date: " + document.getElementById('return-date').value;
-                        document.querySelector("#rt-basic-class > p").textContent = prices[0] + "lv";
-                        document.querySelector("#rt-second-class > p").textContent = prices[1] + "lv";
-                        document.querySelector("#rt-third-class > p").textContent = prices[2] + "lv";
+                        document.querySelector("#rt-basic-class  p").textContent = prices[0] + "lv";
+                        document.querySelector("#rt-second-class  p").textContent = prices[1] + "lv";
+                        document.querySelector("#rt-third-class  p").textContent = prices[2] + "lv";
                         document.getElementById('return-flight-ticket').style.display = 'block';
                         document.getElementById('ticket-type-oneway').textContent = 'Ticket Type: Two Way Ticket';
                         document.getElementById('rt-hour').textContent = 'Departure Time: ' + departureHour + 'h';
