@@ -199,12 +199,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     var destination = destinations.find(d => d.name == currentDestination);
                     let prices = destination.flights[0].price;
-                    document.querySelector("#basic-class > p").textContent = prices[0] + "lv";
-                    document.querySelector("#basic-class > p").addEventListener('click',function (event) {
+                    document.querySelector("#basic-class  p").textContent = prices[0] + "lv";
+                    document.querySelector("#basic-class  p").addEventListener('click',function (event) {
                         document.querySelector("#basic-class").style = 'border: 2px solid purple';
                     });
-                    document.querySelector("#second-class > p").textContent = prices[1] + "lv";
-                    document.querySelector("#third-class > p").textContent = prices[2] + "lv";
+                    document.querySelector("#second-class  p").textContent = prices[1] + "lv";
+                    document.querySelector("#third-class  p").textContent = prices[2] + "lv";
                     let departureHour = destination.flights[0].departure;
                     let landingHour = destination.flights[0].landing;
                     document.getElementById('fl-hour').textContent = 'Departure Time: ' + departureHour + 'h';
@@ -217,9 +217,9 @@ document.addEventListener("DOMContentLoaded", function() {
                         let landingHour = destination.flights[1].landing;
                         document.getElementById('rt-dest').textContent = currentDestination + ' ---> SOFIA';
                         document.getElementById('rt-date').textContent = "Flight Date: " + document.getElementById('return-date').value;
-                        document.querySelector("#rt-basic-class > p").textContent = prices[0] + "lv";
-                        document.querySelector("#rt-second-class > p").textContent = prices[1] + "lv";
-                        document.querySelector("#rt-third-class > p").textContent = prices[2] + "lv";
+                        document.querySelector("#rt-basic-class  p").textContent = prices[0] + "lv";
+                        document.querySelector("#rt-second-class  p").textContent = prices[1] + "lv";
+                        document.querySelector("#rt-third-class  p").textContent = prices[2] + "lv";
                         document.getElementById('return-flight-ticket').style.display = 'block';
                         document.getElementById('ticket-type-oneway').textContent = 'Ticket Type: Two Way Ticket';
                         document.getElementById('rt-hour').textContent = 'Departure Time: ' + departureHour + 'h';
@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('#buy-ticket').addEventListener('click', function (event) {
         document.getElementById("select-baggage").style.display = "none";
         document.getElementById("userProfile").style.display = "block";
-        var user = 
+        // var user = user.find(u =>)
     });
     document.querySelector('#sing-out').addEventListener('click',function (event) {
         location.reload();

@@ -76,6 +76,7 @@
      color: black;
      font-weight: bold;
      padding: 5px;
+     text-align: left;
  }
  
  footer article ul {
@@ -84,6 +85,7 @@
  
  footer article ul li {
      padding: 5px;
+     text-align: left;
  }
  
  footer article ul li a {
@@ -422,23 +424,11 @@
      ;
  }
  
- .class-price-picker {
-     background: gray;
-     width: 10em;
-     height: 5em;
-     margin-left: 4em;
- }
- 
  .class-price-picker>p {
      font-weight: bold;
      padding: 1em;
      color: purple;
      font-size: 1.5em;
- }
- 
- .class-price-picker:hover {
-     border: 2px solid purple;
-     cursor: pointer;
  }
  
  .button-next {
@@ -464,6 +454,7 @@
  #return-flight-ticket {
      border: 1px solid black;
  }
+<<<<<<< HEAD
  .user-properties p{
     margin-top:1em;
 }
@@ -475,3 +466,60 @@
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
+=======
+ 
+ div#select-baggage,
+ div#radio-select-baggage {
+     display: flex;
+     flex-flow: row wrap;
+ }
+ 
+ main#second-main div {
+     flex: 1;
+     padding: 0.5rem;
+ }
+ 
+ input[type="radio"] {
+     display: none;
+ }
+ 
+ input[type="radio"]:not(:disabled)~label {
+     cursor: pointer;
+ }
+ 
+ input[type="radio"]:disabled~label {
+     color: hsla(150, 5%, 75%, 1);
+     border-color: hsla(150, 5%, 75%, 1);
+     box-shadow: none;
+     cursor: not-allowed;
+ }
+ 
+ input[type="radio"]~label {
+     height: 100%;
+     display: block;
+     background: white;
+     border: 2px solid rgb(73, 16, 66);
+     border-radius: 20px;
+     padding: 1rem;
+     margin-bottom: 1rem;
+     margin: 1rem;
+     text-align: center;
+     box-shadow: 0px 3px 10px -2px hsla(150, 5%, 65%, 0.5);
+     position: relative;
+ }
+ 
+ input[type="radio"]:checked+label {
+     background: rgb(141, 80, 156);
+     color: hsla(215, 0%, 100%, 1);
+ }
+ 
+ main#second-main p {
+     font-weight: 900;
+ }
+ 
+ @media only screen and (max-width: 700px) {
+     section {
+         flex-direction: column;
+     }
+ }
+>>>>>>> 5d214f1848ff39004fb9fc249ea8fa67ecea1f1f
