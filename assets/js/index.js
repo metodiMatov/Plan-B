@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     function showMenu(button, containerID, isOn) {
         if (isOn) {
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     var main = document.querySelector('main');
-    main.addEventListener('click', function(event) {
+    main.addEventListener('click', function (event) {
         if (document.getElementById("signIn").style.display == "inline-block" ||
             document.getElementById("registration").style.display == "block") {
             $('main').unblock();
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
     var user = document.querySelector("nav .collapse  ul li > #user");
-    user.addEventListener("click", function(event) {
+    user.addEventListener("click", function (event) {
         $('main').block({ message: null });
         if (document.getElementById("signIn").style.display == "inline-block") {
             showMenu(user, "signIn", false);
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, false);
 
-    document.querySelector("#cancelButton").addEventListener("click", function(event) {
+    document.querySelector("#cancelButton").addEventListener("click", function (event) {
         event.preventDefault();
         $('main').unblock();
         showMenu(user, "signIn", false);
@@ -36,9 +36,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var mail = document.getElementById("mail");
     var pass = document.getElementById("pass");
     var signIn = document.getElementById("signInButton");
-    signIn.addEventListener("click", function(event) {
+    var userProfile;
+    signIn.addEventListener("click", function (event) {
         event.preventDefault();
-        var userConfirmation = users.findUser(mail.value, pass.value);
+        userConfirmation = users.findUser(mail.value, pass.value);
+        userProfile = users.findUser(mail.value, pass.value);
         if (userConfirmation) {
             user.style.display = "none";
             var userName = document.getElementById("profile");
@@ -51,13 +53,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var register = document.getElementById("registerButton");
     var registrationForm = document.getElementById("registration");
-    register.addEventListener("click", function(event) {
+    register.addEventListener("click", function (event) {
         event.preventDefault();
         registrationForm.style.display = "block";
         showMenu(user, "signIn", false);
     }, false)
 
-    document.getElementById("createUser").addEventListener("click", function(event) {
+    document.getElementById("createUser").addEventListener("click", function (event) {
         event.preventDefault();
         var firstName = document.querySelector("form#registration input[placeholder='First name']").value;
         var lastName = document.querySelector("form#registration input[placeholder='Last name']").value;
@@ -73,23 +75,23 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, false);
 
-    document.getElementById("cancelRegistration").addEventListener("click", function(event) {
+    document.getElementById("cancelRegistration").addEventListener("click", function (event) {
         event.preventDefault();
         $('main').unblock();
         registrationForm.style.display = "none";
     }, false);
 
-    document.querySelector("#registration .formName i.closeTab").addEventListener("click", function(event) {
+    document.querySelector("#registration .formName i.closeTab").addEventListener("click", function (event) {
         registrationForm.style.display = "none";
         $('main').unblock();
     }, false);
 
-    document.querySelector("#signIn .formName i.closeTab").addEventListener("click", function(event) {
+    document.querySelector("#signIn .formName i.closeTab").addEventListener("click", function (event) {
         showMenu(user, "signIn", false);
         $('main').unblock();
     }, false);
 
-    document.getElementById("profile").addEventListener("click", function(event) {
+    document.getElementById("profile").addEventListener("click", function (event) {
         event.preventDefault();
         if (document.getElementById("userProfile").style.display == "none") {
             $("#first").hide();
@@ -101,8 +103,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     })
 
-    getOptions().then(function(destinations) {
-        destinations.forEach(function(dest) {
+    getOptions().then(function (destinations) {
+        destinations.forEach(function (dest) {
             var opt = document.createElement("option");
             opt.value = dest.name;
             opt.textContent = dest.name;
@@ -110,14 +112,14 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         var selectDestination = document.getElementById("destination-select");
-        selectDestination.addEventListener("change", function(event) {
+        selectDestination.addEventListener("change", function (event) {
             document.querySelector('div label[for="destination"]').style.color = 'gray';
             for (var index = 0; index < 7; index++) {
                 document.getElementById("departure-date").innerHTML = null;
                 document.getElementById("return-date").innerHTML = '<option selected="selected">One way</option>';
                 if (selectDestination.value == destinations[index].name) {
                     var depatrureDates = destinations[index].flights.map(d => d = d.date);
-                    depatrureDates.forEach(function(date) {
+                    depatrureDates.forEach(function (date) {
                         var option = document.createElement("option");
                         option.value = date;
                         option.textContent = date;
@@ -126,9 +128,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     var returnDates = destinations[index].returnFlights.map(d => d = d.date);
                     var selectedDepartureDate = document.querySelector('#departure-date option').value;
-                    document.getElementById("departure-date").addEventListener("change", function() {
+                    document.getElementById("departure-date").addEventListener("change", function () {
                         document.getElementById("return-date").innerHTML = '<option selected="selected">One way</option>';
-                        returnDates.forEach(function(date) {
+                        returnDates.forEach(function (date) {
 
                             var retMonthDay = date.split('/');
                             var depMonthDay = selectedDepartureDate.split('/');
@@ -155,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     });
 
-    $('#departure-date').change(function(e) {
+    $('#departure-date').change(function (e) {
 
         console.log();
         var startDate = $('#departure-date').val();
@@ -164,16 +166,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var dates = [];
         //var d = new Date("03/25/2015");
-        getOptions().then(function(destinations) {
+        getOptions().then(function (destinations) {
 
-            destinations.forEach(function(e) {
+            destinations.forEach(function (e) {
                 if (e.name == city) {
                     dates = e.returnFlights
                 }
             })
             $('#return-date option').remove();
             $('#return-date').append('<option selected=selected> One way</option>');
-            dates.forEach(function(e) {
+            dates.forEach(function (e) {
                 if (new Date(e.date) > new Date(startDate)) {
                     dates.push(e.date)
                     $('#return-date').append('<option value=' + e.date + '> ' + e.date + '</option>');
@@ -185,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var destinationValue = document.getElementById("destination-select").value;
     var searchbutton = document.querySelector('#search-button');
-    searchbutton.addEventListener('click', function(event) {
+    searchbutton.addEventListener('click', function (event) {
         event.preventDefault();
         if (user.style.display === "none") {
             var secondMain = document.getElementById('second-main');
@@ -195,12 +197,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 var currentDestination = document.getElementById("destination-select").value;
                 document.getElementById('fl-dest').textContent = 'SOFIA  --->  ' + currentDestination;
                 document.getElementById('fl-date').textContent = "Flight Date: " + document.getElementById('departure-date').value;
-                getOptions().then(function(destinations) {
+                getOptions().then(function (destinations) {
 
                     var destination = destinations.find(d => d.name == currentDestination);
                     let prices = destination.flights[0].price;
                     document.querySelector("#basic-class  p").textContent = prices[0] + "lv";
-                    document.querySelector("#basic-class  p").addEventListener('click',function (event) {
+                    document.querySelector("#basic-class  p").addEventListener('click', function (event) {
                         document.querySelector("#basic-class").style = 'border: 2px solid purple';
                     });
                     document.querySelector("#second-class  p").textContent = prices[1] + "lv";
@@ -247,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function() {
         $("#specialCity").show();
     }
 
-    $(".article-city").on("click", function(event) {
+    $(".article-city").on("click", function (event) {
         $('main').block({ message: null });
         var city = this.id.toLowerCase();
         if (city == "milan") {
@@ -264,15 +266,15 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     })
 
-    $("#specialCity i").on("click", function() {
+    $("#specialCity i").on("click", function () {
         $("#specialCity").hide();
         $('main').unblock();
     })
 
-    $(".footer a").on("click", function(event) {
+    $(".footer a").on("click", function (event) {
         event.preventDefault();
     });
-    document.getElementById('next-price').addEventListener('click', function(event) {
+    document.getElementById('next-price').addEventListener('click', function (event) {
         event.preventDefault();
         document.getElementById('return-flight-ticket').style.display = 'none';
         document.getElementById('select-price').style.display = 'none';
@@ -281,9 +283,20 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('#buy-ticket').addEventListener('click', function (event) {
         document.getElementById("select-baggage").style.display = "none";
         document.getElementById("userProfile").style.display = "block";
-        // var user = user.find(u =>)
+        //origin, destination, clasa, baggage,isOneWay,classPrice,baggagePrice
+        var origin = ;
+        var destination = ;
+        var clasa = ;
+        var baggage = ;
+        var isOneWay= ;
+        var classPrice = ;
+        var baggagePrice = ;
+        var t = ticket;
+        t.addProperties();
+        t.claculatedPrice();
+        userProfile.buyTicket(t);
     });
-    document.querySelector('#sing-out').addEventListener('click',function (event) {
+    document.querySelector('#sing-out').addEventListener('click', function (event) {
         location.reload();
     });
 });
