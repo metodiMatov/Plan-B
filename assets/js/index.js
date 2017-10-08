@@ -36,9 +36,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var mail = document.getElementById("mail");
     var pass = document.getElementById("pass");
     var signIn = document.getElementById("signInButton");
+    var userProfile;
     signIn.addEventListener("click", function(event) {
         event.preventDefault();
-        var userConfirmation = users.findUser(mail.value, pass.value);
+        userConfirmation = users.findUser(mail.value, pass.value);
+        userProfile = users.findUser(mail.value, pass.value);
         if (userConfirmation) {
             user.style.display = "none";
             var userName = document.getElementById("profile");
@@ -286,7 +288,18 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('#buy-ticket').addEventListener('click', function(event) {
         document.getElementById("select-baggage").style.display = "none";
         document.getElementById("userProfile").style.display = "block";
-        // var user = user.find(u =>)
+        //origin, destination, clasa, baggage,isOneWay,classPrice,baggagePrice
+        var origin = ;
+        var destination = ;
+        var clasa = ;
+        var baggage = ;
+        var isOneWay = ;
+        var classPrice = ;
+        var baggagePrice = ;
+        var t = ticket;
+        t.addProperties();
+        t.claculatedPrice();
+        userProfile.buyTicket(t);
     });
     document.querySelector('#sing-out').addEventListener('click', function(event) {
         location.reload();
