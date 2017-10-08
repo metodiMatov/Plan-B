@@ -321,7 +321,7 @@
  
  #userProfile {
      display: none;
-     position: absolute;
+     /* position: absolute; */
      margin: auto;
      top: 100px;
      width: 100%;
@@ -431,7 +431,7 @@
  
  .class-price-picker>p {
      font-weight: bold;
-     padding: 1.5em;
+     padding: 1em;
      color: purple;
      font-size: 1.5em;
  }
@@ -464,3 +464,14 @@
  #return-flight-ticket {
      border: 1px solid black;
  }
+ .user-properties p{
+    margin-top:1em;
+}
+.user-profile {
+    border: 1px solid purple;
+    border-radius: 1em;
+}
+.user-profile > div{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}

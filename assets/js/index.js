@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         if (document.getElementById("userProfile").style.display == "none") {
             $("#first").hide();
+            document.querySelector("#second-main").style.display = "none";
             document.getElementById("userProfile").style.display = "block";
         } else {
             $("#first").show();
@@ -280,5 +281,9 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('#buy-ticket').addEventListener('click', function (event) {
         document.getElementById("select-baggage").style.display = "none";
         document.getElementById("userProfile").style.display = "block";
+        var user = 
+    });
+    document.querySelector('#sing-out').addEventListener('click',function (event) {
+        location.reload();
     });
 });
