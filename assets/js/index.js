@@ -199,6 +199,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     var destination = destinations.find(d => d.name == currentDestination);
                     let prices = destination.flights[0].price;
                     document.querySelector("#basic-class > p").textContent = prices[0] + "lv";
+                    document.querySelector("#basic-class > p").addEventListener('click',function (event) {
+                        document.querySelector("#basic-class").style = 'border: 2px solid purple';
+                    });
                     document.querySelector("#second-class > p").textContent = prices[1] + "lv";
                     document.querySelector("#third-class > p").textContent = prices[2] + "lv";
                     let departureHour = destination.flights[0].departure;
@@ -273,5 +276,9 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('return-flight-ticket').style.display = 'none';
         document.getElementById('select-price').style.display = 'none';
         document.getElementById('select-baggage').style.display = 'block';
+    });
+    document.querySelector('#buy-ticket').addEventListener('click', function (event) {
+        document.getElementById("select-baggage").style.display = "none";
+        document.getElementById("userProfile").style.display = "block";
     });
 });
