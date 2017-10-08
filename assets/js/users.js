@@ -1,4 +1,4 @@
-function User(firstName, lastName, phone, mail, password) {
+function User(firstName, lastName, phone, mail, password,money) {
     if (typeof firstName == "string" && firstName.trim().length > 0 && typeof lastName == "string" && lastName.trim().length > 0 &&
         typeof phone == "string" && phone.startsWith("08") && phone.length == 10 && password.length >= 5) {
         this.firstName = firstName;
@@ -6,9 +6,16 @@ function User(firstName, lastName, phone, mail, password) {
         this.phone = phone;
         this.mail = mail;
         this.password = password;
+        this._tickets = [];
+        this.money = money;
     } else {
         throw new Error("Invalid data");
         alert("Invalid data!");
+    }
+}
+User.prototype.buyTicket = function (ticket) {
+    if (ticket instanceof Ticket) {
+        this._tickets.push(ticket);
     }
 }
 
