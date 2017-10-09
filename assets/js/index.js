@@ -286,11 +286,11 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('#buy-ticket').addEventListener('click', function(event) {
         document.getElementById("select-baggage").style.display = "none";
         document.getElementById("userProfile").style.display = "block";
-        //origin, destination, clasa, baggage,isOneWay,classPrice,baggagePrice
-        // var origin = ;
-        // var destination = ;
-        // var clasa = ;
-        // var baggage = ;
+        //origin, destination, date, hour,isOneWay,classPrice,baggagePrice
+        var origin = 'Sofia';
+        var destination = document.getElementById('destination-select').value;
+        //var date = ;
+        //var hour = ;
         // var isOneWay = ;
         // var classPrice = ;
         // var baggagePrice = ;
