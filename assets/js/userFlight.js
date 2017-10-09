@@ -1,7 +1,6 @@
 var ticket = (function () {
-    var number = 1;
+    
     function Ticket(origin, destination, date, hour,isOneWay, classPrice, baggagePrice) {
-        this.id = number++;
         this.destination = destination;
         this.origin = origin;
         this.date = date;
@@ -11,6 +10,7 @@ var ticket = (function () {
         this.isOneWay = isOneWay;
         this.price = 0;
     }
+    
     Ticket.prototype.claculatedPrice = function () {
         if (this.isOneWay == 'One way') {
             this.price = this.classPrice + this.baggagePrice;

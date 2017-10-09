@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
         showMenu(user, "signIn", false);
     }, false);
 
-    function userInfo(user){
+    function userInfo(user) {
         document.querySelector("p#ur-first-name").innerHTML = "First name: ";
         document.querySelector("p#ur-family-name").innerHTML = "Last name: ";
         document.querySelector("p#ur-email").innerHTML = "E-mail: ";
         document.querySelector("p#ur-money").innerHTML = "Money: ";
         document.querySelector("p#ur-first-name").innerHTML += user.firstName;
         document.querySelector("p#ur-family-name").innerHTML += user.lastName;
-        document.querySelector("p#ur-email").innerHTML +=user.mail;
+        document.querySelector("p#ur-email").innerHTML += user.mail;
         document.querySelector("p#ur-money").innerHTML += user.money;
     }
     var mail = document.getElementById("mail");
@@ -102,6 +102,60 @@ document.addEventListener("DOMContentLoaded", function () {
         $('main').unblock();
     }, false);
 
+    function ticketInfo(t) {
+        var userProfile = users.findUser(mail.value, pass.value);
+        var container = document.querySelector(".table-tickets");
+        container.innerHTML = ' <div class="row"> <div class="col-md-4"> <h2>Booked Flights: </h2></div>' +
+            '</div><div class="row"> <div class="col-md-4"> <h4>Destination</h4></div>' +
+            '<div class="col-md-2"> <h4>Date</h4></div><div class="col-md-2"> <h4>Hour</h4></div>' +
+            '<div class="col-md-2"><h4>Price</h4></div><div class="col-md-2"><h4>Delete</h4> </div></div>'
+        userProfile._tickets.forEach(function (t) {
+            var row = document.createElement('div');
+            row.setAttribute('class', 'row ticket-info');
+            var col4 = document.createElement('div');
+            col4.setAttribute('class', 'col-md-4 d');
+            var h4 = document.createElement('h4');
+            h4.textContent = t.destination;
+            col4.appendChild(h4);
+            row.appendChild(col4);
+
+            var col2a = document.createElement('div');
+            col2a.setAttribute('class', 'col-md-2 dt');
+            var h4a = document.createElement('h4');
+            h4a.textContent = t.date;
+            col2a.appendChild(h4a);
+            row.appendChild(col2a);
+
+            var col2b = document.createElement('div');
+            col2b.setAttribute('class', 'col-md-2 h');
+            var h4b = document.createElement('h4');
+            h4b.textContent = t.hour;
+            col2b.appendChild(h4b);
+            row.appendChild(col2b);
+
+            var col2c = document.createElement('div');
+            col2c.setAttribute('class', 'col-md-2 p');
+            var h4c = document.createElement('h4');
+            h4c.textContent = t.price;
+            col2c.appendChild(h4c);
+            row.appendChild(col2c);
+
+            var col2d = document.createElement('div');
+            col2d.setAttribute('class', 'col-md-2 dl');
+            var button = document.createElement('button');
+            button.textContent = 'Remove';
+            col2d.appendChild(button);
+            row.appendChild(col2d);
+            container.appendChild(row);
+            button.addEventListener('click', function (event) {
+                row.parentNode.removeChild(row);
+                users.removeTicket(userProfile, t);
+                userInfo(userProfile);
+            });
+        });
+
+    }
+
     document.getElementById("profile").addEventListener("click", function (event) {
         event.preventDefault();
         if (document.getElementById("userProfile").style.display == "block") {
@@ -111,7 +165,10 @@ document.addEventListener("DOMContentLoaded", function () {
             $("#first").hide();
             document.querySelector("#second-main").style.display = "none";
             document.getElementById("userProfile").style.display = "block";
-
+            // ticketInfo();
+            document.querySelector('#sing-out').addEventListener('click', function (event) {
+                location.reload();
+            });
         }
     })
 
@@ -289,29 +346,24 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('select-price').style.display = 'none';
         document.getElementById('select-baggage').style.display = 'block';
     });
+
     document.querySelector('#buy-ticket').addEventListener('click', function (event) {
         document.getElementById("select-baggage").style.display = "none";
         document.getElementById("userProfile").style.display = "block";
+        document.getElementById('second-main').style.display = 'none';
         var currentDestination = document.getElementById("destination-select").value;
         var userProfile = users.findUser(mail.value, pass.value);
         //origin, destination, date, hour,isOneWay,classPrice,baggagePrice
         getOptions().then(function (destinations) {
             var destination = destinations.find(d => d.name == currentDestination);
-            console.log("destindation :" + destination);
-            var departureFl = destination.flights[0];
-            console.log("departure flight :" + departureFl);
-            var returnFl = destination.flights[1];
-            console.log("return flight :" + returnFl);
+            var departureFl = destination.flights.find(fl => fl.date == document.getElementById("departure-date").value);
+            var returnFl = destination.returnFlights.find(fl => fl.date == document.getElementById("return-date").value);
             var isOneWay = document.getElementById('return-date').value;
-            console.log('Type :' + isOneWay);
             if (isOneWay == 'One way') {
                 var origin = 'Sofia';
                 var dest = destination.name;
-                console.log('Destination: ' + dest);
                 var date = departureFl.date;
-                console.log('date :' + date);
                 var hour = departureFl.departure;
-                console.log('Hour :' + hour);
                 var classPrice;
                 if (document.getElementById('control_01').checked) {
                     classPrice = parseInt(document.querySelector('[for="control_01"]').textContent);
@@ -322,7 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (document.getElementById('control_03').checked) {
                     classPrice = parseInt(document.querySelector('[for="control_03"]').textContent);
                 }
-                console.log('Class price :' + classPrice);
+
                 var baggagePrice;
                 if (document.getElementById('control_1').checked) {
                     baggagePrice = 0;
@@ -336,82 +388,55 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (document.getElementById('control_4').checked) {
                     baggagePrice = parseInt(document.querySelector('[for="control_4"]').textContent);
                 }
-                console.log('Baggage price :' + baggagePrice);
+
                 var t = ticket;
                 t.addProperties(origin, dest, date, hour, isOneWay, classPrice, baggagePrice);
                 t.claculatedPrice();
                 console.log(t);
                 users.buyTicket(t, userProfile);
                 userInfo(userProfile);
+                ticketInfo(t);
+            } else {
+                var origin = 'Sofia';
+                var dest = destination.name;
+                var date = departureFl.date;
+                var hour = departureFl.departure;
+                var classPrice;
+                if (document.getElementById('control_01').checked) {
+                    classPrice = parseInt(document.querySelector('[for="control_01"]').textContent);
+                }
+                if (document.getElementById('control_02').checked) {
+                    classPrice = parseInt(document.querySelector('[for="control_02"]').textContent);
+                }
+                if (document.getElementById('control_03').checked) {
+                    classPrice = parseInt(document.querySelector('[for="control_03"]').textContent);
+                }
+
+                var baggagePrice;
+                if (document.getElementById('control_1').checked) {
+                    baggagePrice = 0;
+                }
+                if (document.getElementById('control_2').checked) {
+                    baggagePrice = parseInt(document.querySelector('[for="control_2"]').textContent);
+                }
+                if (document.getElementById('control_3').checked) {
+                    baggagePrice = parseInt(document.querySelector('[for="control_3"]').textContent);
+                }
+                if (document.getElementById('control_4').checked) {
+                    baggagePrice = parseInt(document.querySelector('[for="control_4"]').textContent);
+                }
+
+                var t = ticket;
+                t.addProperties(origin, dest, date, hour, isOneWay, classPrice, baggagePrice);
+                t.claculatedPrice();
+                console.log(t);
+                users.buyTicket(t, userProfile);
+                userInfo(userProfile);
+                ticketInfo(t);
             }
-            // } else {
-            //     var origin = 'Sofia';
-            //     var destination = destination.name;
-            //     var date = departureFl.date;
-            //     var hour = departureFl.departure;
-            //     var classPrice;
-            //     if (document.getElementById('control_01').checked) {
-            //         classPrice = parseInt(document.querySelector('lable[for="control_01"]'));
-            //     }
-            //     if (document.getElementById('control_02').checked) {
-            //         classPrice = parseInt(document.querySelector('lable[for="control_02"]'));
-            //     }
-            //     if (document.getElementById('control_03').checked) {
-            //         classPrice = parseInt(document.querySelector('lable[for="control_03"]'));
-            //     }
-            //     var baggagePrice;
-            //     if (document.getElementById('control_1').checked) {
-            //         classPrice = 0;
-            //     }
-            //     if (document.getElementById('control_2').checked) {
-            //         classPrice = parseInt(document.querySelector('lable[for="control_2"]'));
-            //     }
-            //     if (document.getElementById('control_3').checked) {
-            //         classPrice = parseInt(document.querySelector('lable[for="control_3"]'));
-            //     }
-            //     if (document.getElementById('control_4').checked) {
-            //         classPrice = parseInt(document.querySelector('lable[for="control_4"]'));
-            //     }
-            //     var t1 = ticket;
-            //     t1.addProperties(origin, destination, date, hour, isOneWay, classPrice, baggagePrice);
-            //     t1.claculatedPrice();
-            //     userProfile.buyTicket(t1);
-            //     //
-            //     var origin = destination.name;
-            //     var destination = 'Sofia';
-            //     var date = returnFl.date;
-            //     var hour = returnFl.departure;
-            //     var classPrice;
-            //     if (document.getElementById('control_01').checked) {
-            //         classPrice = parseInt(document.querySelector('lable[for="control_01"]'));
-            //     }
-            //     if (document.getElementById('control_02').checked) {
-            //         classPrice = parseInt(document.querySelector('lable[for="control_02"]'));
-            //     }
-            //     if (document.getElementById('control_03').checked) {
-            //         classPrice = parseInt(document.querySelector('lable[for="control_03"]'));
-            //     }
-            //     var baggagePrice;
-            //     if (document.getElementById('control_1').checked) {
-            //         classPrice = 0;
-            //     }
-            //     if (document.getElementById('control_2').checked) {
-            //         classPrice = parseInt(document.querySelector('lable[for="control_2"]'));
-            //     }
-            //     if (document.getElementById('control_3').checked) {
-            //         classPrice = parseInt(document.querySelector('lable[for="control_3"]'));
-            //     }
-            //     if (document.getElementById('control_4').checked) {
-            //         classPrice = parseInt(document.querySelector('lable[for="control_4"]'));
-            //     }
-            //     var t2 = ticket;
-            //     t2.addProperties(origin, destination, date, hour, isOneWay, classPrice, baggagePrice);
-            //     t2.claculatedPrice();
-            //     userProfile.buyTicket(t2);
-            // }
         });
-    });
-    document.querySelector('#sing-out').addEventListener('click', function (event) {
-        location.reload();
+        document.querySelector('#sing-out').addEventListener('click', function (event) {
+            location.reload();
+        });
     });
 });

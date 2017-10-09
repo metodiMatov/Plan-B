@@ -40,15 +40,22 @@ UsersList.prototype.deleteUser = function (mail, pass) {
     }
 }
 UsersList.prototype.buyTicket = function (ticket, user) {
-    var userIndex=this._users.findIndex(us=>us.mail===user.mail);
-    console.log(this._users[userIndex]);
+    
+    var userIndex = this._users.findIndex(us => us.mail === user.mail);
+    if(!(this._users[userIndex]._tickets.some((fl1, fl2)=>fl1.date==fl2.date && fl1.destination==fl2.destination))){
      if (this._users[userIndex].money > ticket.price) {
-         console.log(this._users[userIndex].money);
-    this._users[userIndex]._tickets.push(ticket);
-    this._users[userIndex].money -= ticket.price;
-    localStorage.setItem("users", JSON.stringify(this._users));
+        this._users[userIndex]._tickets.push(ticket);
+        this._users[userIndex].money -= ticket.price;
+        localStorage.setItem("users", JSON.stringify(this._users));
     }
 }
-
+}
+UsersList.prototype.removeTicket = function (user, ticket) {
+    var userIndex = this._users.findIndex(us => us.mail === user.mail);
+    var ticketIndex = this._users[userIndex]._tickets.findIndex(t => t.date == ticket.date && t.destination==ticket.destination);
+    this._users[userIndex].money += this._users[userIndex]._tickets[ticketIndex].price;
+    this._users[userIndex]._tickets.splice(ticketIndex,1);
+    localStorage.setItem("users", JSON.stringify(this._users));
+}
 var users = new UsersList;
 users.addUser("Yoana", "Grigorova", "0886392532", "grigorova@gmail.com", "12345", 1000);
