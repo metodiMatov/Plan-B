@@ -15,13 +15,12 @@
     <script src="assets/js/userFlight.js"></script>
     <script src="assets/js/users.js"></script>
     <script src="assets/js/specialOffers.js"></script>
-    <!-- <script src="node_modules/handlebars/dist/handlebars.min.js"></script> -->
     <script src="node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
     <script src="node_modules/bootstrap-select/dist/js/i18n/defaults-en_US.min.js"></script>
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/script.js"></script>
 
 
-    <title>AIR</title>
+    <title>ITAir</title>
 </head>
 
 <body>
@@ -99,15 +98,15 @@
                                     <br/>
                                     <div class="col-lg-10 pass-input">
                                         <label for="return" class="col-lg-2 control-label">Adults</label>
-                                        <input class="passengers" type="number" value="1" min="1" max="15">
+                                        <input id="adults" class="passengers" type="number" value="1" min="1" max="15">
                                     </div>
                                     <div class="col-lg-10 pass-input">
                                         <label for="passangers" class="col-lg-2 control-label">Kids</label>
-                                        <input class="passengers" type="number" value="0" min="0" max="15">
+                                        <input id="kids" class="passengers" type="number" value="0" min="0" max="15">
                                     </div>
                                     <div class="col-lg-10 pass-input">
                                         <label for="passangers" class="col-lg-2 control-label">Infants</label>
-                                        <input class="passengers" type="number" value="0" min="0" max="9">
+                                        <input id="infants" class="passengers" type="number" value="0" min="0" max="9">
                                     </div>
                                 </div>
                             </div>
@@ -364,61 +363,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div id="select-baggage" class="container ticket-select" style="display:none">
-                    <div class="row fl-destination-name">
-                        <div class="col-md-4 col-md-offset-3">
-                            <h2 id="fl-baggage-type">Choose Type of Baggage</h2>
-                        </div>
-                    </div>
-                    <div class="row fl-classes" id="radio-select-baggage">
-                        <div class="col-md-3">
-                            <h4 id="none-type">NONE</h4>
-                            <img src="https://argonaut.fourthelement.com/img/drysuits/none.png" alt="">
-                            <div id="none-baggage" class="class-price-picker">
-                                <input type="radio" id="control_01" name="select" value="none" checked>
-                                <label for="control_01">
-                                            <p>NONE</p>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <h4 id="hand-type">Hand</h4>
-                            <img src="http://www.freeiconspng.com/uploads/baggage-icon-png-19.png" alt="">
-                            <div id="hand-baggage" class="class-price-picker">
-                                <input type="radio" id="control_02" name="select" value="20">
-                                <label for="control_02">
-                                            <p>20lv</p>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <h4 id="check-in-type">Check-in</h4>
-                            <img src="https://cdn1.iconfinder.com/data/icons/airport-set-1/512/39-512.png" alt="">
-                            <div id="checkin-baggage" class="class-price-picker">
-                                <input type="radio" id="control_03" name="select" value="30">
-                                <label for="control_03">
-                                            <p>30lv</p>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <h4 id="bundle-type">Hand + Check-in</h4>
-                            <img src="https://media.rbl.ms/image?u=%2Ffiles%2F2016%2F04%2F23%2F635969748559569785-243177581_Travel_1-512.png&ho=https%3A%2F%2Faz616578.vo.msecnd.net&s=483&h=c4e4b6a0fb90cdb1c44ba037512f66c767df890395ac4ebcec693a25a22d59a2&size=980x&c=451587962"
-                                alt="">
-                            <div id="bundle-baggage" class="class-price-picker">
-                                <input type="radio" id="control_04" name="select" value="50">
-                                <label for="control_04">
-                                            <p>50lv</p>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row button-next">
-                        <div class="col-md-3 btn-buy">
-                            <button id="buy-ticket" class="btn btn-primary">Buy Ticket</button>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </main>
@@ -445,45 +389,6 @@
             </div>
             <div class="row">
                 <div class="container table-tickets">
-                    <!-- <div class="row">
-                        <div class="col-md-4">
-                            <h2>Booked Flights: </h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h4>Destination</h4>
-                        </div>
-                        <div class="col-md-2">
-                            <h4>Date</h4>
-                        </div>
-                        <div class="col-md-2">
-                            <h4>Hour</h4>
-                        </div>
-                        <div class="col-md-2">
-                            <h4>Price</h4>
-                        </div>
-                        <div class="col-md-2">
-                            <h4>Delete</h4>
-                        </div>
-                    </div> -->
-                    <!-- <div class="row ticket-info">
-                        <div class="col-md-4 d">
-                            <h4></h4>
-                        </div>
-                        <div class="col-md-2 dt">
-                            <h4></h4>
-                        </div>
-                        <div class="col-md-2 h">
-                            <h4></h4>
-                        </div>
-                        <div class="col-md-2 p">
-                            <h4></h4>
-                        </div>
-                        <div class="col-md-2 dl">
-                            <h4></h4>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>

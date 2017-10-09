@@ -102,20 +102,21 @@ document.addEventListener("DOMContentLoaded", function() {
         $('main').unblock();
     }, false);
 
-    function ticketInfo(t) {
+    function ticketInfo() {
         var userProfile = users.findUser(mail.value, pass.value);
         var container = document.querySelector(".table-tickets");
-        container.innerHTML = ' <div class="row"> <div class="col-md-4"> <h2>Booked Flights: </h2></div>' +
-            '</div><div class="row"> <div class="col-md-4"> <h4>Destination</h4></div>' +
+
+        container.innerHTML = ' <div class="row"><div class="col-md-4"> <h2>Booked Flights: </h2></div>' +
+            '</div><div class="row"> <div class="col-md-2"> <h4>Destination</h4></div>' +
             '<div class="col-md-2"> <h4>Date</h4></div><div class="col-md-2"> <h4>Hour</h4></div>' +
-            '<div class="col-md-2"><h4>Price</h4></div><div class="col-md-2"><h4>Delete</h4> </div></div>'
+            '<div class="col-md-2"><h4>Passangers</h4></div><div class="col-md-2"><h4>Price</h4></div><div class="col-md-2"><h4>Delete</h4> </div></div>'
         userProfile._tickets.forEach(function(t) {
             var row = document.createElement('div');
             row.setAttribute('class', 'row ticket-info');
             var col4 = document.createElement('div');
-            col4.setAttribute('class', 'col-md-4 d');
+            col4.setAttribute('class', 'col-md-2 d');
             var h4 = document.createElement('h4');
-            h4.textContent = t.destination;
+            h4.textContent = t.origin + "-->" + t.destination;
             col4.appendChild(h4);
             row.appendChild(col4);
 
@@ -132,6 +133,13 @@ document.addEventListener("DOMContentLoaded", function() {
             h4b.textContent = t.hour;
             col2b.appendChild(h4b);
             row.appendChild(col2b);
+
+            var col2e = document.createElement('div');
+            col2e.setAttribute('class', 'col-md-2 pas');
+            var h4e = document.createElement('h4');
+            h4e.textContent = t.passengers;
+            col2e.appendChild(h4e);
+            row.appendChild(col2e);
 
             var col2c = document.createElement('div');
             col2c.setAttribute('class', 'col-md-2 p');
@@ -166,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function() {
             $("#first").hide();
             document.querySelector("#second-main").style.display = "none";
             document.getElementById("userProfile").style.display = "block";
-            // ticketInfo();
+            ticketInfo();
             document.querySelector('#sing-out').addEventListener('click', function(event) {
                 location.reload();
             });
@@ -235,7 +243,6 @@ document.addEventListener("DOMContentLoaded", function() {
         var newDates = [];
 
         var dates = [];
-        //var d = new Date("03/25/2015");
         getOptions().then(function(destinations) {
 
             destinations.forEach(function(e) {
@@ -279,7 +286,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.getElementById('fl-hour').textContent = 'Departure Time: ' + departureHour + 'h';
                     document.getElementById('fl-landing').textContent = 'Landing Time: ' + landingHour + 'h';
                     document.getElementById('ticket-type-oneway').textContent = 'Ticket Type: One Way Ticket';
-                    //origin, destination, clasa, baggage, calculatedPrice,isOneWay
                     if (document.getElementById('return-date').value !== 'One way') {
                         let prices = destination.flights[1].price;
                         let departureHour = destination.flights[1].departure;
@@ -297,7 +303,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 });
             } else {
-                // var form = document.getElementById('div-search-btn');
                 var p = document.querySelector("#error");
                 p.textContent = 'Invalid search input !';
                 document.querySelector('div label[for="destination"]').style.color = 'red';
@@ -359,12 +364,13 @@ document.addEventListener("DOMContentLoaded", function() {
             var departureFl = destination.flights.find(fl => fl.date == document.getElementById("departure-date").value);
             var returnFl = destination.returnFlights.find(fl => fl.date == document.getElementById("return-date").value);
             var isOneWay = document.getElementById('return-date').value;
+            var passengers = parseInt(document.getElementById("adults").value) + parseInt(document.getElementById("kids").value) + parseInt(document.getElementById("infants").value);
             if (isOneWay == 'One way') {
-                var origin = 'Sofia';
-                var dest = destination.name;
-                var date = departureFl.date;
-                var hour = departureFl.departure;
-                var classPrice;
+                let origin = 'Sofia ';
+                let dest = destination.name;
+                let date = departureFl.date;
+                let hour = departureFl.departure;
+                let classPrice;
                 if (document.getElementById('control_01').checked) {
                     classPrice = parseInt(document.querySelector('[for="control_01"]').textContent);
                 }
@@ -375,7 +381,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     classPrice = parseInt(document.querySelector('[for="control_03"]').textContent);
                 }
 
-                var baggagePrice;
+                let baggagePrice;
                 if (document.getElementById('control_1').checked) {
                     baggagePrice = 0;
                 }
@@ -389,19 +395,20 @@ document.addEventListener("DOMContentLoaded", function() {
                     baggagePrice = parseInt(document.querySelector('[for="control_4"]').textContent);
                 }
 
-                var t = ticket;
-                t.addProperties(origin, dest, date, hour, isOneWay, classPrice, baggagePrice);
+                let t = new Ticket();
+                t.addProperties(origin, dest, date, hour, isOneWay, classPrice, baggagePrice, passengers);
                 t.claculatedPrice();
-                console.log(t);
                 users.buyTicket(t, userProfile);
-                userInfo(userProfile);
                 ticketInfo(t);
+                userInfo(userProfile);
             } else {
-                var origin = 'Sofia';
-                var dest = destination.name;
-                var date = departureFl.date;
-                var hour = departureFl.departure;
-                var classPrice;
+                var passengers = parseInt(document.getElementById("adults").value) + parseInt(document.getElementById("kids").value) + parseInt(document.getElementById("infants").value);
+                console.log(passengers);
+                let origin = 'Sofia';
+                let dest = destination.name;
+                let date = departureFl.date;
+                let hour = departureFl.departure;
+                let classPrice;
                 if (document.getElementById('control_01').checked) {
                     classPrice = parseInt(document.querySelector('[for="control_01"]').textContent);
                 }
@@ -412,7 +419,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     classPrice = parseInt(document.querySelector('[for="control_03"]').textContent);
                 }
 
-                var baggagePrice;
+                let baggagePrice;
                 if (document.getElementById('control_1').checked) {
                     baggagePrice = 0;
                 }
@@ -426,13 +433,24 @@ document.addEventListener("DOMContentLoaded", function() {
                     baggagePrice = parseInt(document.querySelector('[for="control_4"]').textContent);
                 }
 
-                var t = ticket;
-                t.addProperties(origin, dest, date, hour, isOneWay, classPrice, baggagePrice);
+                let t = new Ticket();
+
+                t.addProperties(origin, dest, date, hour, isOneWay, classPrice, baggagePrice, passengers);
                 t.claculatedPrice();
-                console.log(t);
                 users.buyTicket(t, userProfile);
+                let origin2 = destination.name;
+                let dest2 = 'Sofia';
+                let date2 = returnFl.date;
+                let hour2 = returnFl.departure;
+                let classPrice2 = classPrice;
+                let bagggePrice2 = baggagePrice;
+
+                let v = new Ticket();
+                v.addProperties(origin2, dest2, date2, hour2, isOneWay, classPrice2, bagggePrice2, passengers);
+                v.claculatedPrice();
+                users.buyTicket(v, userProfile);
+                ticketInfo(v);
                 userInfo(userProfile);
-                ticketInfo(t);
             }
         });
         document.querySelector('#sing-out').addEventListener('click', function(event) {
