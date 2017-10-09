@@ -4454,7 +4454,7 @@ tbody.collapse.in {
 }
 
 .btn-group>.btn:first-child {
-    margin-left: 0;
+    margin-left: 1em;
 }
 
 .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {

@@ -37,9 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function userInfo(user){
         document.querySelector("p#ur-first-name").innerHTML = "First name: ";
         document.querySelector("p#ur-family-name").innerHTML = "Last name: ";
+        document.querySelector("p#ur-email").innerHTML = "E-mail: ";
         document.querySelector("p#ur-money").innerHTML = "Money: ";
         document.querySelector("p#ur-first-name").innerHTML += user.firstName;
         document.querySelector("p#ur-family-name").innerHTML += user.lastName;
+        document.querySelector("p#ur-email").innerHTML +=user.mail;
         document.querySelector("p#ur-money").innerHTML += user.money;
     }
     var mail = document.getElementById("mail");
@@ -125,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         selectDestination.addEventListener("change", function (event) {
             document.querySelector('div label[for="destination"]').style.color = 'gray';
             for (var index = 0; index < 7; index++) {
-                document.getElementById("departure-date").innerHTML = null;
+                document.getElementById("departure-date").innerHTML = '<option selected="selected" disabled="disabled">Select date</option>';
                 document.getElementById("return-date").innerHTML = '<option selected="selected">One way</option>';
                 if (selectDestination.value == destinations[index].name) {
                     var depatrureDates = destinations[index].flights.map(d => d = d.date);
@@ -212,9 +214,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     var destination = destinations.find(d => d.name == currentDestination);
                     let prices = destination.flights[0].price;
                     document.querySelector("#basic-class  p").textContent = prices[0] + "lv";
-                    document.querySelector("#basic-class  p").addEventListener('click', function (event) {
-                        document.querySelector("#basic-class").style = 'border: 2px solid purple';
-                    });
                     document.querySelector("#second-class  p").textContent = prices[1] + "lv";
                     document.querySelector("#third-class  p").textContent = prices[2] + "lv";
                     let departureHour = destination.flights[0].departure;

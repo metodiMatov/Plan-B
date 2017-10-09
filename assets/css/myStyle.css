@@ -318,7 +318,8 @@
  }
  
  .passengers {
-     margin-left: 1em;
+     margin-left: 2em;
+     border: none;
  }
  
  #userProfile {
@@ -522,4 +523,28 @@
      section {
          flex-direction: column;
      }
+ }
+ 
+ #departure-date,
+ #return-date {
+     display: inline-block;
+     overflow: hidden;
+     width: 67%;
+     height: 36px;
+     text-align: left;
+     margin-left: 1em;
+     border-radius: 3px;
+     border: none;
+ }
+ 
+ #departure-date {
+     margin-top: 1em;
+ }
+ 
+ #return-date {
+     margin-top: -2em;
+ }
+ 
+ label[for=departureDate] {
+     margin-top: 2em;
  }
